@@ -1,0 +1,492 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Bonkers Addons\n"
+"POT-Creation-Date: 2017-08-15 11:33-0300\n"
+"PO-Revision-Date: 2017-08-15 11:33-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: bonkers-addons.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: bonkers-addons.php:81
+msgid "Front Page Sections"
+msgstr ""
+
+#: bonkers-addons.php:91
+msgid "Welcome"
+msgstr ""
+
+#: bonkers-addons.php:92
+msgid "Display a big image and welcome message."
+msgstr ""
+
+#: bonkers-addons.php:101
+msgid "Welcome Message"
+msgstr ""
+
+#: bonkers-addons.php:104
+msgid "View More"
+msgstr ""
+
+#: bonkers-addons.php:108 bonkers-addons.php:210 bonkers-addons.php:341
+msgid "Link Title"
+msgstr ""
+
+#: bonkers-addons.php:115 bonkers-addons.php:217 bonkers-addons.php:348
+msgid "Link URL"
+msgstr ""
+
+#: bonkers-addons.php:120
+msgid "Welcome Image"
+msgstr ""
+
+#: bonkers-addons.php:134 bonkers-addons.php:170 bonkers-addons.php:253
+#: bonkers-addons.php:309 bonkers-addons.php:367 bonkers-addons.php:420
+#: bonkers-addons.php:463 bonkers-addons.php:528 bonkers-addons.php:571
+#: bonkers-addons.php:651
+msgid "Use this section?"
+msgstr ""
+
+#: bonkers-addons.php:139 bonkers-addons.php:175 bonkers-addons.php:258
+#: bonkers-addons.php:314 bonkers-addons.php:372 bonkers-addons.php:425
+#: bonkers-addons.php:468 bonkers-addons.php:533 bonkers-addons.php:576
+#: bonkers-addons.php:656
+msgid "On"
+msgstr ""
+
+#: bonkers-addons.php:140 bonkers-addons.php:176 bonkers-addons.php:259
+#: bonkers-addons.php:315 bonkers-addons.php:373 bonkers-addons.php:426
+#: bonkers-addons.php:469 bonkers-addons.php:534 bonkers-addons.php:577
+#: bonkers-addons.php:657
+msgid "Off"
+msgstr ""
+
+#: bonkers-addons.php:149
+msgid "Services"
+msgstr ""
+
+#: bonkers-addons.php:150
+msgid "Display services with icons."
+msgstr ""
+
+#: bonkers-addons.php:158
+msgid ""
+"To add services go to: <br><a href=\"#\" data-section=\"sidebar-widgets-"
+"services-section\">Customize -> Widgets -> Front Page - Service Section</a>. "
+"<br>Then add the \"<strong>Bonkers - Service widget</strong>\""
+msgstr ""
+
+#: bonkers-addons.php:185 bonkers-addons.php:222 bonkers-addons.php:276
+#: bonkers-addons.php:353
+msgid "Image"
+msgstr ""
+
+#: bonkers-addons.php:186 bonkers-addons.php:325
+msgid "Display an image and text."
+msgstr ""
+
+#: bonkers-addons.php:195 bonkers-addons.php:334 bonkers-addons.php:392
+#: bonkers-addons.php:445 bonkers-addons.php:488 bonkers-addons.php:553
+#: bonkers-addons.php:596
+msgid "Title"
+msgstr ""
+
+#: bonkers-addons.php:202 bonkers-addons.php:399 bonkers-addons.php:495
+msgid "Text"
+msgstr ""
+
+#: bonkers-addons.php:206
+msgid "Learn More"
+msgstr ""
+
+#: bonkers-addons.php:235
+msgid "Layout"
+msgstr ""
+
+#: bonkers-addons.php:268
+msgid "Phone"
+msgstr ""
+
+#: bonkers-addons.php:269
+msgid "Display phone screenshot with features."
+msgstr ""
+
+#: bonkers-addons.php:277
+msgid "Recommended size: 640x1136px."
+msgstr ""
+
+#: bonkers-addons.php:285
+msgid ""
+"To add features go to: <br><a href=\"#\" data-section=\"sidebar-widgets-"
+"phone-section-left\">Customize -> Widgets -> Front Page - Phone Section "
+"Left</a>. <br>Then add the \"<strong>Bonkers - Phone Feature</strong>\""
+msgstr ""
+
+#: bonkers-addons.php:291
+msgid ""
+"To add features go to: <br><a href=\"#\" data-section=\"sidebar-widgets-"
+"phone-section-right\">Customize -> Widgets -> Front Page - Phone Section "
+"Right</a>. <br>Then add the \"<strong>Bonkers - Phone Feature</strong>\""
+msgstr ""
+
+#: bonkers-addons.php:296
+msgid "Background Color"
+msgstr ""
+
+#: bonkers-addons.php:324
+msgid "Call To Action"
+msgstr ""
+
+#: bonkers-addons.php:330
+msgid "Start Creating Beautiful Sites Now!"
+msgstr ""
+
+#: bonkers-addons.php:337
+msgid "Sign Up"
+msgstr ""
+
+#: bonkers-addons.php:382
+msgid "Video"
+msgstr ""
+
+#: bonkers-addons.php:383
+msgid "Display a video and text."
+msgstr ""
+
+#: bonkers-addons.php:388
+msgid "Your success is our most important priority"
+msgstr ""
+
+#: bonkers-addons.php:407
+msgid "Video URL"
+msgstr ""
+
+#: bonkers-addons.php:408
+msgid "Example: https://vimeo.com/72661448"
+msgstr ""
+
+#: bonkers-addons.php:435
+msgid "Team"
+msgstr ""
+
+#: bonkers-addons.php:436
+msgid "Display a team members."
+msgstr ""
+
+#: bonkers-addons.php:441
+msgid "The Team"
+msgstr ""
+
+#: bonkers-addons.php:451
+msgid ""
+"To add a team member go to: <br><a href=\"#\" data-section=\"sidebar-widgets-"
+"team-section\">Customize -> Widgets -> Front Page - Team Section</a>. "
+"<br>Then add the \"<strong>Bonkers - Team Member</strong>\""
+msgstr ""
+
+#: bonkers-addons.php:478 bonkers-addons.php:484 bonkers-addons.php:499
+#: bonkers-addons.php:622
+msgid "Subscribe"
+msgstr ""
+
+#: bonkers-addons.php:479
+msgid "Display a Subscribe form."
+msgstr ""
+
+#: bonkers-addons.php:503 bonkers-addons.php:626
+msgid "Button Text"
+msgstr ""
+
+#: bonkers-addons.php:506
+msgid "Enter your email..."
+msgstr ""
+
+#: bonkers-addons.php:510
+msgid "Placeholder"
+msgstr ""
+
+#: bonkers-addons.php:516
+msgid ""
+"Make sure that you have Jetpack plugin installed and you can find your "
+"subscribers on your Admin Panel > Feedback"
+msgstr ""
+
+#: bonkers-addons.php:543
+msgid "Clients"
+msgstr ""
+
+#: bonkers-addons.php:544
+msgid "Display a clients logos."
+msgstr ""
+
+#: bonkers-addons.php:549
+msgid "The Clients"
+msgstr ""
+
+#: bonkers-addons.php:559
+msgid ""
+"To add a client logo go to: <br><a href=\"#\" data-section=\"sidebar-widgets-"
+"clients-section\">Customize -> Widgets -> Front Page - Clients Section</a>. "
+"<br>Then add the \"<strong>Bonkers - Client Logo</strong>\""
+msgstr ""
+
+#: bonkers-addons.php:586 bonkers-addons.php:592
+msgid "Contact"
+msgstr ""
+
+#: bonkers-addons.php:587
+msgid "Display a map and contact form."
+msgstr ""
+
+#: bonkers-addons.php:603
+msgid "Google Maps API Key"
+msgstr ""
+
+#: bonkers-addons.php:604
+#, php-format
+msgid ""
+"An API Key is required for Google Maps to work. <a href='%s'>Sign up for one "
+"here</a> (it's free for small usage)"
+msgstr ""
+
+#: bonkers-addons.php:611
+msgid "Latitude and Longitude"
+msgstr ""
+
+#: bonkers-addons.php:612
+msgid "Comma separated. Example: 40.725987, -74.002447"
+msgstr ""
+
+#: bonkers-addons.php:619
+msgid "Zoom"
+msgstr ""
+
+#: bonkers-addons.php:638
+msgid "Select Form"
+msgstr ""
+
+#: bonkers-addons.php:639
+msgid "Forms are obtained from the Contact Form 7 plugin."
+msgstr ""
+
+#: bonkers-addons.php:767
+#, php-format
+msgid ""
+"<strong>%s</strong> recommends <strong><a href=\"https://colorlib.com\" "
+"target=\"_blank\">Bonkers theme</a></strong>."
+msgstr ""
+
+#: shortcodes/gallery.php:13
+msgid "ShopApp Gallery"
+msgstr ""
+
+#: shortcodes/gallery.php:14
+msgid "Display a gallery."
+msgstr ""
+
+#: shortcodes/gallery.php:16 shortcodes/image-banner.php:16
+#: shortcodes/instagram-box.php:25 shortcodes/offer-banner.php:17
+#: shortcodes/product-carousel.php:25 shortcodes/slider-products.php:25
+#: shortcodes/stairs-products.php:26
+msgid "Content"
+msgstr ""
+
+#: shortcodes/gallery.php:22
+msgid "Columns:"
+msgstr ""
+
+#: shortcodes/gallery.php:30
+msgid "Select how many columns to display."
+msgstr ""
+
+#: shortcodes/gallery.php:35
+msgid "Images"
+msgstr ""
+
+#: shortcodes/gallery.php:38 shortcodes/product-carousel.php:49
+msgid "Images for the carousel"
+msgstr ""
+
+#: shortcodes/image-banner.php:13
+msgid "ShopApp Image Banner"
+msgstr ""
+
+#: shortcodes/image-banner.php:14
+msgid "Display a simple Banner with overlay text.."
+msgstr ""
+
+#: shortcodes/image-banner.php:22 shortcodes/offer-banner.php:31
+msgid "Image:"
+msgstr ""
+
+#: shortcodes/image-banner.php:30 shortcodes/offer-banner.php:39
+msgid "Content:"
+msgstr ""
+
+#: shortcodes/image-banner.php:37
+msgid "Banner Link:"
+msgstr ""
+
+#: shortcodes/instagram-box.php:22
+msgid "ShopApp Instagram Box"
+msgstr ""
+
+#: shortcodes/instagram-box.php:23
+msgid "Promote your Instagram account.."
+msgstr ""
+
+#: shortcodes/instagram-box.php:31
+msgid "Instagram Account:"
+msgstr ""
+
+#: shortcodes/instagram-box.php:34
+msgid "Your Instagram username."
+msgstr ""
+
+#: shortcodes/instagram-box.php:39
+msgid "Name to Display:"
+msgstr ""
+
+#: shortcodes/instagram-box.php:46 shortcodes/offer-banner.php:46
+msgid "Button Text:"
+msgstr ""
+
+#: shortcodes/offer-banner.php:14
+msgid "ShopApp Offer Banner"
+msgstr ""
+
+#: shortcodes/offer-banner.php:15
+msgid "Display a Banner for Offer with a countdown."
+msgstr ""
+
+#: shortcodes/offer-banner.php:23
+msgid "Finish Date:"
+msgstr ""
+
+#: shortcodes/offer-banner.php:26
+msgid "Date when the offer is over (Optional)."
+msgstr ""
+
+#: shortcodes/offer-banner.php:53
+msgid "Button Link:"
+msgstr ""
+
+#: shortcodes/offer-banner.php:60
+msgid "Background Color:"
+msgstr ""
+
+#: shortcodes/offer-banner.php:110
+msgid "Days"
+msgstr ""
+
+#: shortcodes/offer-banner.php:111
+msgid "Hours"
+msgstr ""
+
+#: shortcodes/offer-banner.php:112
+msgid "Min"
+msgstr ""
+
+#: shortcodes/offer-banner.php:113
+msgid "Seg"
+msgstr ""
+
+#: shortcodes/product-carousel.php:22
+msgid "ShopApp Product Carousel"
+msgstr ""
+
+#: shortcodes/product-carousel.php:23
+msgid "Display a carousel of WooCommerce Products."
+msgstr ""
+
+#: shortcodes/product-carousel.php:31 shortcodes/slider-products.php:31
+#: shortcodes/stairs-products.php:32
+msgid "Display:"
+msgstr ""
+
+#: shortcodes/product-carousel.php:34 shortcodes/slider-products.php:34
+#: shortcodes/stairs-products.php:35
+msgid "Select which category to display or the Top Sellers option."
+msgstr ""
+
+#: shortcodes/product-carousel.php:39
+msgid "Title:"
+msgstr ""
+
+#: shortcodes/product-carousel.php:46
+msgid "Description:"
+msgstr ""
+
+#: shortcodes/product-carousel.php:54 shortcodes/slider-products.php:47
+#: shortcodes/stairs-products.php:40
+msgid "Amount of Products:"
+msgstr ""
+
+#: shortcodes/product-carousel.php:57 shortcodes/slider-products.php:50
+#: shortcodes/stairs-products.php:43
+msgid "How many products to display"
+msgstr ""
+
+#: shortcodes/product-carousel.php:110
+msgid "Top Sellers"
+msgstr ""
+
+#: shortcodes/product-carousel.php:165 shortcodes/slider-products.php:138
+#: shortcodes/stairs-products.php:115
+msgid "No items to show."
+msgstr ""
+
+#: shortcodes/slider-products.php:22
+msgid "ShopApp Products Slider"
+msgstr ""
+
+#: shortcodes/slider-products.php:23
+msgid "Display a slider of WooCommerce Products."
+msgstr ""
+
+#: shortcodes/slider-products.php:39
+msgid "Products ID:"
+msgstr ""
+
+#: shortcodes/slider-products.php:42
+msgid ""
+"Insert the ID of the products to display separated by comma. Example: 15, "
+"72, 101, 45"
+msgstr ""
+
+#: shortcodes/stairs-products.php:23
+msgid "ShopApp Stairs Products"
+msgstr ""
+
+#: shortcodes/stairs-products.php:24
+msgid "Display a stairs of products."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Bonkers Addons"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://colorlib.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Addons for Bonkers theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Colorlib"
+msgstr ""
