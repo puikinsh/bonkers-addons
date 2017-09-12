@@ -619,7 +619,7 @@ function bonkers_addons_init(){
                     'label' => esc_attr__( "Zoom", 'bonkers-addons' ),
                 ) );
 
-                $wp_customize->add_setting( 'bonkers_addons_contact_link_title', array( 'type' => 'option', 'default' => esc_html__( 'Subscribe', 'bonkers-addons' ), 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
+                $wp_customize->add_setting( 'bonkers_addons_contact_link_title', array( 'type' => 'option', 'default' => esc_html__( 'Send', 'bonkers-addons' ), 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( 'bonkers_addons_contact_link_title', array(
                     'type' => 'text',
                     'section' => 'bonkers_addons_contact_section', // Required, core or custom.
@@ -692,6 +692,13 @@ function bonkers_addons_init(){
          */
         function bonkers_addons_sanitize_text_html( $str ) {
             return wp_kses_post( $str );
+        }
+
+        /**
+         * Sanitize return an non-negative Integer
+         */
+        function bonkers_addons_sanitize_integer( $value ) {
+            return absint( $value );
         }
 
         /**
