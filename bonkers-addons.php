@@ -694,6 +694,22 @@ function bonkers_addons_init(){
         add_action( 'init', 'bonkers_addons_kirki_register', 11 );
 
         /**
+         * Register widgets.
+         *
+         * @link https://codex.wordpress.org/Widgets_API
+         */
+        function bonkers_addons_widgets_register() {
+
+            require BONKERS_ADDONS__PLUGIN_DIR . 'widgets/class-bonkers-contact-info.php';
+            require BONKERS_ADDONS__PLUGIN_DIR . 'widgets/class-bonkers-service.php';
+            require BONKERS_ADDONS__PLUGIN_DIR . 'widgets/class-bonkers-phone-feature.php';
+            require BONKERS_ADDONS__PLUGIN_DIR . 'widgets/class-bonkers-team-member.php';
+            require BONKERS_ADDONS__PLUGIN_DIR . 'widgets/class-bonkers-client-logo.php';
+
+        }
+        add_action( 'widgets_init', 'bonkers_addons_widgets_register' );
+
+        /**
          * Sanitize Text
          */
         function bonkers_addons_sanitize_text( $str ) {
