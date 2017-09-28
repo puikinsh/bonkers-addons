@@ -122,26 +122,6 @@ function bonkers_addons_init(){
                     'settings' => 'bonkers_addons_welcome_image',
                 ) ) );
 
-                Kirki::add_config( 'bonkers_addons_welcome_enable', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_welcome_enable', array(
-                    'type'        => 'switch',
-                    'transport'   => 'postMessage',
-                    'settings'    => 'bonkers_addons_welcome_enable',
-                    'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_welcome_section',
-                    'default'     => '1',
-                    'priority'    => 60,
-                    'choices'     => array(
-                        'on'  => esc_attr__( 'On', 'bonkers-addons' ),
-                        'off' => esc_attr__( 'Off', 'bonkers-addons' ),
-                    ),
-                ) );
-
-
                 /*
                 Services
                 ------------------------------ */
@@ -157,25 +137,6 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_services_section', // Required, core or custom.
                     'label' => __( 'To add services go to: <br><a href="#" data-section="sidebar-widgets-services-section">Customize -> Widgets -> Front Page - Service Section</a>. <br>Then add the "<strong>Bonkers - Service widget</strong>"', 'bonkers-addons' ),
                 ) ) );
-
-                Kirki::add_config( 'bonkers_addons_services_enable', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_services_enable', array(
-                    'type'        => 'switch',
-                    'transport'   => 'postMessage',
-                    'settings'    => 'bonkers_addons_services_enable',
-                    'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_services_section',
-                    'default'     => '1',
-                    'priority'    => 60,
-                    'choices'     => array(
-                        'on'  => esc_attr__( 'On', 'bonkers-addons' ),
-                        'off' => esc_attr__( 'Off', 'bonkers-addons' ),
-                    ),
-                ) );
 
 
                 /*
@@ -224,43 +185,6 @@ function bonkers_addons_init(){
                     'settings' => 'bonkers_addons_image_image',
                 ) ) );
 
-                Kirki::add_config( 'bonkers_addons_image_layout', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_image_layout', array(
-                    'type'        => 'radio-image',
-                    'settings'    => 'bonkers_addons_image_layout',
-                    'label'       => esc_attr__( 'Layout', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_image_section',
-                    'default'     => 'left',
-                    'choices'     => array(
-                        'left' => BONKERS_ADDONS__PLUGIN_URL . '/images/image_layout_left.png',
-                        'right' => BONKERS_ADDONS__PLUGIN_URL . '/images/image_layout_right.png',
-                    ),
-                ) );
-
-                Kirki::add_config( 'bonkers_addons_image_enable', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_image_enable', array(
-                    'type'        => 'switch',
-                    'transport'   => 'postMessage',
-                    'settings'    => 'bonkers_addons_image_enable',
-                    'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_image_section',
-                    'default'     => '1',
-                    'priority'    => 60,
-                    'choices'     => array(
-                        'on'  => esc_attr__( 'On', 'bonkers-addons' ),
-                        'off' => esc_attr__( 'Off', 'bonkers-addons' ),
-                    ),
-                ) );
-
-
                 /*
                 Phone
                 ------------------------------ */
@@ -296,26 +220,6 @@ function bonkers_addons_init(){
                     'label'        => esc_attr__( 'Background Color', 'bonkers-addons' ),
                     'section'    => 'bonkers_addons_phone_section',
                 ) ) );
-
-                Kirki::add_config( 'bonkers_addons_phone_enable', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_phone_enable', array(
-                    'type'        => 'switch',
-                    'transport'   => 'postMessage',
-                    'settings'    => 'bonkers_addons_phone_enable',
-                    'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_phone_section',
-                    'default'     => '1',
-                    'priority'    => 60,
-                    'choices'     => array(
-                        'on'  => esc_attr__( 'On', 'bonkers-addons' ),
-                        'off' => esc_attr__( 'Off', 'bonkers-addons' ),
-                    ),
-                ) );
-
 
                 /*
                 Call To Action
@@ -355,26 +259,6 @@ function bonkers_addons_init(){
                     'settings' => 'bonkers_addons_cta_image',
                 ) ) );
 
-                Kirki::add_config( 'bonkers_addons_cta_enable', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_cta_enable', array(
-                    'type'        => 'switch',
-                    'transport'   => 'postMessage',
-                    'settings'    => 'bonkers_addons_cta_enable',
-                    'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_cta_section',
-                    'default'     => '1',
-                    'priority'    => 60,
-                    'choices'     => array(
-                        'on'  => esc_attr__( 'On', 'bonkers-addons' ),
-                        'off' => esc_attr__( 'Off', 'bonkers-addons' ),
-                    ),
-                ) );
-
-
                 /*
                 Video
                 ------------------------------ */
@@ -408,26 +292,6 @@ function bonkers_addons_init(){
                     'description' => esc_attr__( 'Example: https://vimeo.com/72661448', 'bonkers-addons' ),
                 ) );
 
-                Kirki::add_config( 'bonkers_addons_video_enable', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_video_enable', array(
-                    'type'        => 'switch',
-                    'transport'   => 'postMessage',
-                    'settings'    => 'bonkers_addons_video_enable',
-                    'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_video_section',
-                    'default'     => '1',
-                    'priority'    => 60,
-                    'choices'     => array(
-                        'on'  => esc_attr__( 'On', 'bonkers-addons' ),
-                        'off' => esc_attr__( 'Off', 'bonkers-addons' ),
-                    ),
-                ) );
-
-
                 /*
                 Team
                 ------------------------------ */
@@ -450,26 +314,6 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_team_section', // Required, core or custom.
                     'label' => __( 'To add a team member go to: <br><a href="#" data-section="sidebar-widgets-team-section">Customize -> Widgets -> Front Page - Team Section</a>. <br>Then add the "<strong>Bonkers - Team Member</strong>"', 'bonkers-addons' ),
                 ) ) );
-
-                Kirki::add_config( 'bonkers_addons_team_enable', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_team_enable', array(
-                    'type'        => 'switch',
-                    'transport'   => 'postMessage',
-                    'settings'    => 'bonkers_addons_team_enable',
-                    'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_team_section',
-                    'default'     => '1',
-                    'priority'    => 60,
-                    'choices'     => array(
-                        'on'  => esc_attr__( 'On', 'bonkers-addons' ),
-                        'off' => esc_attr__( 'Off', 'bonkers-addons' ),
-                    ),
-                ) );
-
 
                 /*
                 Subscribe
@@ -516,26 +360,6 @@ function bonkers_addons_init(){
                     'label' => __( 'Make sure that you have Jetpack plugin installed and you can find your subscribers on your Admin Panel > Feedback', 'bonkers-addons' ),
                 ) ) );
 
-                Kirki::add_config( 'bonkers_addons_subscribe_enable', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_subscribe_enable', array(
-                    'type'        => 'switch',
-                    'transport'   => 'postMessage',
-                    'settings'    => 'bonkers_addons_subscribe_enable',
-                    'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_subscribe_section',
-                    'default'     => '1',
-                    'priority'    => 60,
-                    'choices'     => array(
-                        'on'  => esc_attr__( 'On', 'bonkers-addons' ),
-                        'off' => esc_attr__( 'Off', 'bonkers-addons' ),
-                    ),
-                ) );
-
-
                 /*
                 Clients
                 ------------------------------ */
@@ -558,26 +382,6 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_clients_section', // Required, core or custom.
                     'label' => __( 'To add a client logo go to: <br><a href="#" data-section="sidebar-widgets-clients-section">Customize -> Widgets -> Front Page - Clients Section</a>. <br>Then add the "<strong>Bonkers - Client Logo</strong>"', 'bonkers-addons' ),
                 ) ) );
-
-                Kirki::add_config( 'bonkers_addons_clients_enable', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_clients_enable', array(
-                    'type'        => 'switch',
-                    'transport'   => 'postMessage',
-                    'settings'    => 'bonkers_addons_clients_enable',
-                    'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_clients_section',
-                    'default'     => '1',
-                    'priority'    => 60,
-                    'choices'     => array(
-                        'on'  => esc_attr__( 'On', 'bonkers-addons' ),
-                        'off' => esc_attr__( 'Off', 'bonkers-addons' ),
-                    ),
-                ) );
-
 
                 /*
                 Contact
@@ -639,32 +443,255 @@ function bonkers_addons_init(){
                     'description' => esc_attr__( 'Forms are obtained from the Contact Form 7 plugin.', 'bonkers-addons' ),
                 ) );
 
-                Kirki::add_config( 'bonkers_addons_contact_enable', array(
-                    'capability'    => 'edit_theme_options',
-                    'option_type'   => 'option',
-                    'option_name'   => 'bonkers_addons',
-                ) );
-                Kirki::add_field( 'bonkers_addons_contact_enable', array(
-                    'type'        => 'switch',
-                    'transport'   => 'postMessage',
-                    'settings'    => 'bonkers_addons_contact_enable',
-                    'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
-                    'section'     => 'bonkers_addons_contact_section',
-                    'default'     => '1',
-                    'priority'    => 60,
-                    'choices'     => array(
-                        'on'  => esc_attr__( 'On', 'bonkers-addons' ),
-                        'off' => esc_attr__( 'Off', 'bonkers-addons' ),
-                    ),
-                ) );
-
-
-
-
-
         }
         add_action( 'customize_register', 'bonkers_addons_customize_register' );
 
+        function bonkers_addons_kirki_register(){
+
+            if ( ! class_exists( 'Kirki' ) ) {
+                return;
+            }
+
+            /*
+            Welcome
+            ------------------------------ */
+            Kirki::add_config( 'bonkers_addons_welcome_enable', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_welcome_enable', array(
+                'type'        => 'switch',
+                'transport'   => 'postMessage',
+                'settings'    => 'bonkers_addons_welcome_enable',
+                'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_welcome_section',
+                'default'     => '1',
+                'priority'    => 60,
+                'choices'     => array(
+                    'on'  => esc_attr__( 'On', 'bonkers-addons' ),
+                    'off' => esc_attr__( 'Off', 'bonkers-addons' ),
+                ),
+            ) );
+
+            /*
+            Services
+            ------------------------------ */
+            Kirki::add_config( 'bonkers_addons_services_enable', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_services_enable', array(
+                'type'        => 'switch',
+                'transport'   => 'postMessage',
+                'settings'    => 'bonkers_addons_services_enable',
+                'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_services_section',
+                'default'     => '1',
+                'priority'    => 60,
+                'choices'     => array(
+                    'on'  => esc_attr__( 'On', 'bonkers-addons' ),
+                    'off' => esc_attr__( 'Off', 'bonkers-addons' ),
+                ),
+            ) );
+
+            /*
+            Image
+            ------------------------------ */
+            Kirki::add_config( 'bonkers_addons_image_layout', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_image_layout', array(
+                'type'        => 'radio-image',
+                'settings'    => 'bonkers_addons_image_layout',
+                'label'       => esc_attr__( 'Layout', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_image_section',
+                'default'     => 'left',
+                'choices'     => array(
+                    'left' => BONKERS_ADDONS__PLUGIN_URL . '/images/image_layout_left.png',
+                    'right' => BONKERS_ADDONS__PLUGIN_URL . '/images/image_layout_right.png',
+                ),
+            ) );
+
+            Kirki::add_config( 'bonkers_addons_image_enable', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_image_enable', array(
+                'type'        => 'switch',
+                'transport'   => 'postMessage',
+                'settings'    => 'bonkers_addons_image_enable',
+                'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_image_section',
+                'default'     => '1',
+                'priority'    => 60,
+                'choices'     => array(
+                    'on'  => esc_attr__( 'On', 'bonkers-addons' ),
+                    'off' => esc_attr__( 'Off', 'bonkers-addons' ),
+                ),
+            ) );
+
+            /*
+            Phone
+            ------------------------------ */
+            Kirki::add_config( 'bonkers_addons_phone_enable', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_phone_enable', array(
+                'type'        => 'switch',
+                'transport'   => 'postMessage',
+                'settings'    => 'bonkers_addons_phone_enable',
+                'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_phone_section',
+                'default'     => '1',
+                'priority'    => 60,
+                'choices'     => array(
+                    'on'  => esc_attr__( 'On', 'bonkers-addons' ),
+                    'off' => esc_attr__( 'Off', 'bonkers-addons' ),
+                ),
+            ) );
+
+            /*
+            Call To Action
+            ------------------------------ */
+            Kirki::add_config( 'bonkers_addons_cta_enable', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_cta_enable', array(
+                'type'        => 'switch',
+                'transport'   => 'postMessage',
+                'settings'    => 'bonkers_addons_cta_enable',
+                'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_cta_section',
+                'default'     => '1',
+                'priority'    => 60,
+                'choices'     => array(
+                    'on'  => esc_attr__( 'On', 'bonkers-addons' ),
+                    'off' => esc_attr__( 'Off', 'bonkers-addons' ),
+                ),
+            ) );
+
+            /*
+            Video
+            ------------------------------ */
+            Kirki::add_config( 'bonkers_addons_video_enable', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_video_enable', array(
+                'type'        => 'switch',
+                'transport'   => 'postMessage',
+                'settings'    => 'bonkers_addons_video_enable',
+                'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_video_section',
+                'default'     => '1',
+                'priority'    => 60,
+                'choices'     => array(
+                    'on'  => esc_attr__( 'On', 'bonkers-addons' ),
+                    'off' => esc_attr__( 'Off', 'bonkers-addons' ),
+                ),
+            ) );
+
+            /*
+            Team
+            ------------------------------ */
+            Kirki::add_config( 'bonkers_addons_team_enable', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_team_enable', array(
+                'type'        => 'switch',
+                'transport'   => 'postMessage',
+                'settings'    => 'bonkers_addons_team_enable',
+                'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_team_section',
+                'default'     => '1',
+                'priority'    => 60,
+                'choices'     => array(
+                    'on'  => esc_attr__( 'On', 'bonkers-addons' ),
+                    'off' => esc_attr__( 'Off', 'bonkers-addons' ),
+                ),
+            ) );
+
+            /*
+            Subscribe
+            ------------------------------ */
+            Kirki::add_config( 'bonkers_addons_subscribe_enable', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_subscribe_enable', array(
+                'type'        => 'switch',
+                'transport'   => 'postMessage',
+                'settings'    => 'bonkers_addons_subscribe_enable',
+                'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_subscribe_section',
+                'default'     => '1',
+                'priority'    => 60,
+                'choices'     => array(
+                    'on'  => esc_attr__( 'On', 'bonkers-addons' ),
+                    'off' => esc_attr__( 'Off', 'bonkers-addons' ),
+                ),
+            ) );
+
+            /*
+            Clients
+            ------------------------------ */
+            Kirki::add_config( 'bonkers_addons_clients_enable', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_clients_enable', array(
+                'type'        => 'switch',
+                'transport'   => 'postMessage',
+                'settings'    => 'bonkers_addons_clients_enable',
+                'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_clients_section',
+                'default'     => '1',
+                'priority'    => 60,
+                'choices'     => array(
+                    'on'  => esc_attr__( 'On', 'bonkers-addons' ),
+                    'off' => esc_attr__( 'Off', 'bonkers-addons' ),
+                ),
+            ) );
+            
+
+            /*
+            Contact
+            ------------------------------ */
+            Kirki::add_config( 'bonkers_addons_contact_enable', array(
+                'capability'    => 'edit_theme_options',
+                'option_type'   => 'option',
+                'option_name'   => 'bonkers_addons',
+            ) );
+            Kirki::add_field( 'bonkers_addons_contact_enable', array(
+                'type'        => 'switch',
+                'transport'   => 'postMessage',
+                'settings'    => 'bonkers_addons_contact_enable',
+                'label'       => esc_html__( 'Use this section?', 'bonkers-addons' ),
+                'section'     => 'bonkers_addons_contact_section',
+                'default'     => '1',
+                'priority'    => 60,
+                'choices'     => array(
+                    'on'  => esc_attr__( 'On', 'bonkers-addons' ),
+                    'off' => esc_attr__( 'Off', 'bonkers-addons' ),
+                ),
+            ) );
+
+        }
+        add_action( 'init', 'bonkers_addons_kirki_register', 11 );
 
         /**
          * Sanitize Text
