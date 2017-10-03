@@ -1,0 +1,14 @@
+li.bonkers-radio-image {
+    display: inline-block;
+}
+.bonkers-radio-image label > input{
+  visibility: hidden;
+  position: absolute;
+}
+.bonkers-radio-image label > input + img{
+  cursor:pointer;
+  border:2px solid transparent;
+}
+.bonkers-radio-image label > input:checked + img{
+  border:2px solid #f00;
+}
