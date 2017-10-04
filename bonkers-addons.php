@@ -78,7 +78,6 @@ function bonkers_addons_init(){
 
             }
 
-
             /*
             Sections
             ===================================================== */
@@ -105,12 +104,18 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_welcome_section', // Required, core or custom.
                     'label' => esc_attr__( 'Welcome Message', 'bonkers-addons' ),
                 ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_welcome_title', array(
+                    'selector' => '#bonkers-welcome-section .bonkers-intro-line',
+                ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_welcome_link_title', array( 'type' => 'option', 'default' => esc_html__( 'View More', 'bonkers-addons' ), 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( 'bonkers_addons_welcome_link_title', array(
                     'type' => 'text',
                     'section' => 'bonkers_addons_welcome_section', // Required, core or custom.
                     'label' => esc_attr__( "Link Title", 'bonkers-addons' ),
+                ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_welcome_link_title', array(
+                    'selector' => '#bonkers-welcome-section a.ql_border_btn',
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_welcome_link_url', array( 'type' => 'option', 'default' => '#', 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_url', ) );
@@ -124,10 +129,12 @@ function bonkers_addons_init(){
                 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bonkers_addons_welcome_image', array(
                     'label'    => esc_attr__( 'Welcome Image', 'bonkers-addons' ),
                     'section'  => 'bonkers_addons_welcome_section',
-                    'settings' => 'bonkers_addons_welcome_image',
                 ) ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_welcome_image', array(
+                    'selector' => '#bonkers-welcome-section',
+                ) );
 
-                $wp_customize->add_setting( 'bonkers_addons_welcome_enable', array( 'type' => 'option', 'default' => '1', 'transport' => 'refresh', 'sanitize_callback' => 'bonkers_addons_sanitize_integer', ) );
+                $wp_customize->add_setting( 'bonkers_addons_welcome_enable', array( 'type' => 'option', 'default' => 1, 'transport' => 'refresh', 'sanitize_callback' => 'bonkers_addons_sanitize_integer', ) );
                 if ( class_exists( 'Epsilon_Control_Toggle' ) ) {
                     $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, 'bonkers_addons_welcome_enable', array(
                         'label'    => esc_attr__( 'Use this section?', 'bonkers-addons' ),
@@ -165,6 +172,9 @@ function bonkers_addons_init(){
                         'label' => esc_attr__( "Use this section?", 'bonkers-addons' ),
                     ) );
                 }
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_services_enable', array(
+                    'selector' => '#bonkers-services-section',
+                ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_services_text', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( new Bonkers_Addons_Display_Text_Control( $wp_customize, 'bonkers_addons_services_text', array(
@@ -188,12 +198,26 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_image_section', // Required, core or custom.
                     'label' => esc_attr__( 'Title', 'bonkers-addons' ),
                 ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_image_title', array(
+                    'selector' => '#bonkers-image-section .bonkers-image-section-title',
+                ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_image_text', array( 'type' => 'option', 'default' => '', 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text_html', ) );
-                $wp_customize->add_control( 'bonkers_addons_image_text', array(
-                    'type' => 'textarea',
-                    'section' => 'bonkers_addons_image_section', // Required, core or custom.
-                    'label' => esc_attr__( 'Text', 'bonkers-addons' ),
+                if ( class_exists( 'Epsilon_Control_Text_Editor' ) ) {
+                    $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, 'bonkers_addons_image_text', array(
+                        'section' => 'bonkers_addons_image_section', // Required, core or custom.
+                        'label' => esc_attr__( 'Text', 'bonkers-addons' ),
+                    ) ) );
+                }else{
+                    $wp_customize->add_control( 'bonkers_addons_image_text', array(
+                        'type' => 'textarea',
+                        'section' => 'bonkers_addons_image_section', // Required, core or custom.
+                        'label' => esc_attr__( 'Text', 'bonkers-addons' ),
+                    ) );
+                }
+                
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_image_text', array(
+                    'selector' => '#bonkers-image-section .bonkers-image-section-content',
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_image_link_title', array( 'type' => 'option', 'default' => esc_html__( 'Learn More', 'bonkers-addons' ), 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
@@ -201,6 +225,9 @@ function bonkers_addons_init(){
                     'type' => 'text',
                     'section' => 'bonkers_addons_image_section', // Required, core or custom.
                     'label' => esc_attr__( "Link Title", 'bonkers-addons' ),
+                ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_image_link_title', array(
+                    'selector' => '#bonkers-image-section a.ql_border_btn',
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_image_link_url', array( 'type' => 'option', 'default' => '#', 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_url', ) );
@@ -216,6 +243,9 @@ function bonkers_addons_init(){
                     'section'  => 'bonkers_addons_image_section',
                     'settings' => 'bonkers_addons_image_image',
                 ) ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_image_image', array(
+                    'selector' => '#bonkers-image-section .bonkers-image-section-image',
+                ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_image_layout', array(
                     'type' => 'option',
@@ -263,6 +293,9 @@ function bonkers_addons_init(){
                     'section'  => 'bonkers_addons_phone_section',
                     'settings' => 'bonkers_addons_phone_image',
                 ) ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_phone_image', array(
+                    'selector' => '#bonkers-phone-section .bonkers-phone-screenshot',
+                ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_phone_text_left', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( new Bonkers_Addons_Display_Text_Control( $wp_customize, 'bonkers_addons_phone_text_left', array(
@@ -312,12 +345,18 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_cta_section', // Required, core or custom.
                     'label' => esc_attr__( 'Title', 'bonkers-addons' ),
                 ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_cta_title', array(
+                    'selector' => '#bonkers-cta-section .bonkers-cta-title',
+                ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_cta_link_title', array( 'type' => 'option', 'default' => esc_html__( 'Sign Up', 'bonkers-addons' ), 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( 'bonkers_addons_cta_link_title', array(
                     'type' => 'text',
                     'section' => 'bonkers_addons_cta_section', // Required, core or custom.
                     'label' => esc_attr__( "Link Title", 'bonkers-addons' ),
+                ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_cta_link_title', array(
+                    'selector' => '#bonkers-cta-section .bonkers-cta-button',
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_cta_link_url', array( 'type' => 'option', 'default' => '#', 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_url', ) );
@@ -364,12 +403,25 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_video_section', // Required, core or custom.
                     'label' => esc_attr__( 'Title', 'bonkers-addons' ),
                 ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_video_title', array(
+                    'selector' => '#bonkers-video-section .bonkers-video-title',
+                ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_video_text', array( 'type' => 'option', 'default' => '', 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text_html', ) );
-                $wp_customize->add_control( 'bonkers_addons_video_text', array(
-                    'type' => 'textarea',
-                    'section' => 'bonkers_addons_video_section', // Required, core or custom.
-                    'label' => esc_attr__( 'Text', 'bonkers-addons' ),
+                if ( class_exists( 'Epsilon_Control_Text_Editor' ) ) {
+                    $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, 'bonkers_addons_video_text', array(
+                        'section' => 'bonkers_addons_video_section', // Required, core or custom.
+                        'label' => esc_attr__( 'Text', 'bonkers-addons' ),
+                    ) ) );
+                }else{
+                    $wp_customize->add_control( 'bonkers_addons_video_text', array(
+                        'type' => 'textarea',
+                        'section' => 'bonkers_addons_video_section', // Required, core or custom.
+                        'label' => esc_attr__( 'Text', 'bonkers-addons' ),
+                    ) );
+                }
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_video_text', array(
+                    'selector' => '#bonkers-video-section .bonkers-video-content',
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_video_url', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_url', ) );
@@ -378,6 +430,9 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_video_section', // Required, core or custom.
                     'label' => esc_attr__( 'Video URL', 'bonkers-addons' ),
                     'description' => esc_attr__( 'Example: https://vimeo.com/72661448', 'bonkers-addons' ),
+                ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_video_url', array(
+                    'selector' => '#bonkers-video-section .bonkers-video-video',
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_video_enable', array( 'type' => 'option', 'default' => '1', 'transport' => 'refresh', 'sanitize_callback' => 'bonkers_addons_sanitize_integer', ) );
@@ -409,6 +464,9 @@ function bonkers_addons_init(){
                     'type' => 'text',
                     'section' => 'bonkers_addons_team_section', // Required, core or custom.
                     'label' => esc_attr__( 'Title', 'bonkers-addons' ),
+                ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_team_title', array(
+                    'selector' => '#bonkers-team-section .bonkers-section-title',
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_team_text', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
@@ -447,12 +505,25 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_subscribe_section', // Required, core or custom.
                     'label' => esc_attr__( 'Title', 'bonkers-addons' ),
                 ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_subscribe_title', array(
+                    'selector' => '#bonkers-subscribe-section .bonkers-subscribe-title',
+                ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_subscribe_text', array( 'type' => 'option', 'default' => '', 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text_html', ) );
-                $wp_customize->add_control( 'bonkers_addons_subscribe_text', array(
-                    'type' => 'textarea',
-                    'section' => 'bonkers_addons_subscribe_section', // Required, core or custom.
-                    'label' => esc_attr__( 'Text', 'bonkers-addons' ),
+                if ( class_exists( 'Epsilon_Control_Text_Editor' ) ) {
+                    $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, 'bonkers_addons_subscribe_text', array(
+                        'section' => 'bonkers_addons_subscribe_section', // Required, core or custom.
+                        'label' => esc_attr__( 'Text', 'bonkers-addons' ),
+                    ) ) );
+                }else{
+                    $wp_customize->add_control( 'bonkers_addons_subscribe_text', array(
+                        'type' => 'textarea',
+                        'section' => 'bonkers_addons_subscribe_section', // Required, core or custom.
+                        'label' => esc_attr__( 'Text', 'bonkers-addons' ),
+                    ) );
+                }
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_subscribe_text', array(
+                    'selector' => '#bonkers-subscribe-section .bonkers-subscribe-text',
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_subscribe_link_title', array( 'type' => 'option', 'default' => esc_html__( 'Subscribe', 'bonkers-addons' ), 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
@@ -461,12 +532,18 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_subscribe_section', // Required, core or custom.
                     'label' => esc_attr__( "Button Text", 'bonkers-addons' ),
                 ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_subscribe_link_title', array(
+                    'selector' => '#bonkers-subscribe-section .contact-submit',
+                ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_subscribe_link_placeholder', array( 'type' => 'option', 'default' => esc_html__( 'Enter your email...', 'bonkers-addons' ), 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( 'bonkers_addons_subscribe_link_placeholder', array(
                     'type' => 'text',
                     'section' => 'bonkers_addons_subscribe_section', // Required, core or custom.
                     'label' => esc_attr__( "Placeholder", 'bonkers-addons' ),
+                ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_subscribe_link_placeholder', array(
+                    'selector' => '#bonkers-subscribe-section .contact-form > div',
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_subscribe_expl', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
@@ -505,6 +582,9 @@ function bonkers_addons_init(){
                     'section' => 'bonkers_addons_clients_section', // Required, core or custom.
                     'label' => esc_attr__( 'Title', 'bonkers-addons' ),
                 ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_clients_title', array(
+                    'selector' => '#bonkers-clients-section .bonkers-section-title',
+                ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_clients_text', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( new Bonkers_Addons_Display_Text_Control( $wp_customize, 'bonkers_addons_clients_text', array(
@@ -512,7 +592,7 @@ function bonkers_addons_init(){
                     'description' => __( 'To add a client logo go to: <br><a href="#" data-section="sidebar-widgets-clients-section">Customize -> Widgets -> Front Page - Clients Section</a>. <br>Then add the "<strong>Bonkers - Client Logo</strong>"', 'bonkers-addons' ),
                 ) ) );
 
-                $wp_customize->add_setting( 'bonkers_addons_clients_enable', array( 'type' => 'option', 'default' => '1', 'transport' => 'refresh', 'sanitize_callback' => 'bonkers_addons_sanitize_integer', ) );
+                $wp_customize->add_setting( 'bonkers_addons_clients_enable', array( 'type' => 'option', 'default' => '1', 'transport' => 'refresh', 'sanitize_callback' => 'bonkers_addons_sanitize_integer' ) );
                 if ( class_exists( 'Epsilon_Control_Toggle' ) ) {
                     $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, 'bonkers_addons_clients_enable', array(
                         'label'    => esc_attr__( 'Use this section?', 'bonkers-addons' ),
@@ -541,6 +621,9 @@ function bonkers_addons_init(){
                     'type' => 'text',
                     'section' => 'bonkers_addons_contact_section', // Required, core or custom.
                     'label' => esc_attr__( 'Title', 'bonkers-addons' ),
+                ) );
+                $wp_customize->selective_refresh->add_partial( 'bonkers_addons_contact_title', array(
+                    'selector' => '#bonkers-contact-section .bonkers-contact-title',
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_contact_key', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
@@ -600,6 +683,9 @@ function bonkers_addons_init(){
 		                    'label' => esc_attr__( "Contact Form", 'bonkers-addons' ),
 		                    'description' => esc_attr__( 'Forms are obtained from the Contact Form 7 plugin.', 'bonkers-addons' ),
 		                ) );
+                        $wp_customize->selective_refresh->add_partial( 'bonkers_addons_contact_form', array(
+                            'selector' => '#bonkers-contact-section .bonkers-contact-form',
+                        ) );
 	                }
                 	
                 }
@@ -719,6 +805,24 @@ function bonkers_addons_init(){
         }
         add_action( 'customize_controls_enqueue_scripts', 'bonkers_addons_customize_js' );
 
+        // Validate option returned for toggle controler
+        $bonkers_addons_options = array(
+            'bonkers_addons_welcome_enable',
+            'bonkers_addons_clients_enable',
+            'bonkers_addons_services_enable',
+            'bonkers_addons_image_enable',
+            'bonkers_addons_phone_enable',
+            'bonkers_addons_cta_enable',
+            'bonkers_addons_video_enable',
+            'bonkers_addons_team_enable',
+            'bonkers_addons_subscribe_enable',
+            'bonkers_addons_contact_enable'
+        );
+
+        foreach ( $bonkers_addons_options as $bonkers_addons_option ) {
+            add_filter( "option_{$bonkers_addons_option}", 'bonkers_addons_sanitize_integer', 99, 1 );
+        }
+
     }else{
 
         add_action( 'admin_notices', 'bonkers_addons_shownotice' );
@@ -733,5 +837,3 @@ function bonkers_addons_init(){
     }
 }
 add_action( 'plugins_loaded', 'bonkers_addons_init' );
-
-
