@@ -167,7 +167,7 @@ function bonkers_addons_init(){
                 $wp_customize->add_setting( 'bonkers_addons_services_text', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( new bonkers_addons_Display_Text_Control( $wp_customize, 'bonkers_addons_services_text', array(
                     'section' => 'bonkers_addons_services_section', // Required, core or custom.
-                    'label' => __( 'To add services go to: <br><a href="#" data-section="sidebar-widgets-services-section">Customize -> Widgets -> Front Page - Service Section</a>. <br>Then add the "<strong>Bonkers - Service widget</strong>"', 'bonkers-addons' ),
+                    'description' => __( 'To add services go to: <br><a href="#" data-section="sidebar-widgets-services-section">Customize -> Widgets -> Front Page - Service Section</a>. <br>Then add the "<strong>Bonkers - Service widget</strong>"', 'bonkers-addons' ),
                 ) ) );
 
                 /*
@@ -192,7 +192,6 @@ function bonkers_addons_init(){
                     'type' => 'textarea',
                     'section' => 'bonkers_addons_image_section', // Required, core or custom.
                     'label' => esc_attr__( 'Text', 'bonkers-addons' ),
-                    //'description' => esc_attr__( '', 'bonkers-addons' ),
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_image_link_title', array( 'type' => 'option', 'default' => esc_html__( 'Learn More', 'bonkers-addons' ), 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
@@ -266,13 +265,13 @@ function bonkers_addons_init(){
                 $wp_customize->add_setting( 'bonkers_addons_phone_text_left', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( new bonkers_addons_Display_Text_Control( $wp_customize, 'bonkers_addons_phone_text_left', array(
                     'section' => 'bonkers_addons_phone_section', // Required, core or custom.
-                    'label' => __( 'To add features go to: <br><a href="#" data-section="sidebar-widgets-phone-section-left">Customize -> Widgets -> Front Page - Phone Section Left</a>. <br>Then add the "<strong>Bonkers - Phone Feature</strong>"', 'bonkers-addons' ),
+                    'description' => __( 'To add features go to: <br><a href="#" data-section="sidebar-widgets-phone-section-left">Customize -> Widgets -> Front Page - Phone Section Left</a>. <br>Then add the "<strong>Bonkers - Phone Feature</strong>"', 'bonkers-addons' ),
                 ) ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_phone_text_right', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( new bonkers_addons_Display_Text_Control( $wp_customize, 'bonkers_addons_phone_text_right', array(
                     'section' => 'bonkers_addons_phone_section', // Required, core or custom.
-                    'label' => __( 'To add features go to: <br><a href="#" data-section="sidebar-widgets-phone-section-right">Customize -> Widgets -> Front Page - Phone Section Right</a>. <br>Then add the "<strong>Bonkers - Phone Feature</strong>"', 'bonkers-addons' ),
+                    'description' => __( 'To add features go to: <br><a href="#" data-section="sidebar-widgets-phone-section-right">Customize -> Widgets -> Front Page - Phone Section Right</a>. <br>Then add the "<strong>Bonkers - Phone Feature</strong>"', 'bonkers-addons' ),
                 ) ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_phone_color', array( 'default' => '#f7f7f7', 'transport' => 'postMessage', 'sanitize_callback' => 'sanitize_hex_color', 'type' => 'theme_mod' ) );
@@ -413,7 +412,7 @@ function bonkers_addons_init(){
                 $wp_customize->add_setting( 'bonkers_addons_team_text', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( new bonkers_addons_Display_Text_Control( $wp_customize, 'bonkers_addons_team_text', array(
                     'section' => 'bonkers_addons_team_section', // Required, core or custom.
-                    'label' => __( 'To add a team member go to: <br><a href="#" data-section="sidebar-widgets-team-section">Customize -> Widgets -> Front Page - Team Section</a>. <br>Then add the "<strong>Bonkers - Team Member</strong>"', 'bonkers-addons' ),
+                    'description' => __( 'To add a team member go to: <br><a href="#" data-section="sidebar-widgets-team-section">Customize -> Widgets -> Front Page - Team Section</a>. <br>Then add the "<strong>Bonkers - Team Member</strong>"', 'bonkers-addons' ),
                 ) ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_team_enable', array( 'type' => 'option', 'default' => '1', 'transport' => 'refresh', 'sanitize_callback' => 'bonkers_addons_sanitize_integer', ) );
@@ -471,7 +470,7 @@ function bonkers_addons_init(){
                 $wp_customize->add_setting( 'bonkers_addons_subscribe_expl', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( new bonkers_addons_Display_Text_Control( $wp_customize, 'bonkers_addons_subscribe_expl', array(
                     'section' => 'bonkers_addons_subscribe_section', // Required, core or custom.
-                    'label' => __( 'Make sure that you have Jetpack plugin installed and you can find your subscribers on your Admin Panel > Feedback', 'bonkers-addons' ),
+                    'description' => __( 'Make sure that you have Jetpack plugin installed and you can find your subscribers on your Admin Panel > Feedback', 'bonkers-addons' ),
                 ) ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_subscribe_enable', array( 'type' => 'option', 'default' => '1', 'transport' => 'refresh', 'sanitize_callback' => 'bonkers_addons_sanitize_integer', ) );
@@ -508,7 +507,7 @@ function bonkers_addons_init(){
                 $wp_customize->add_setting( 'bonkers_addons_clients_text', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
                 $wp_customize->add_control( new bonkers_addons_Display_Text_Control( $wp_customize, 'bonkers_addons_clients_text', array(
                     'section' => 'bonkers_addons_clients_section', // Required, core or custom.
-                    'label' => __( 'To add a client logo go to: <br><a href="#" data-section="sidebar-widgets-clients-section">Customize -> Widgets -> Front Page - Clients Section</a>. <br>Then add the "<strong>Bonkers - Client Logo</strong>"', 'bonkers-addons' ),
+                    'description' => __( 'To add a client logo go to: <br><a href="#" data-section="sidebar-widgets-clients-section">Customize -> Widgets -> Front Page - Clients Section</a>. <br>Then add the "<strong>Bonkers - Client Logo</strong>"', 'bonkers-addons' ),
                 ) ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_clients_enable', array( 'type' => 'option', 'default' => '1', 'transport' => 'refresh', 'sanitize_callback' => 'bonkers_addons_sanitize_integer', ) );
@@ -547,43 +546,61 @@ function bonkers_addons_init(){
                     'type' => 'text',
                     'section' => 'bonkers_addons_contact_section', // Required, core or custom.
                     'label' => esc_attr__( "Google Maps API Key", 'bonkers-addons' ),
-                    'description' => sprintf( __("An API Key is required for Google Maps to work. <a href='%s'>Sign up for one here</a> (it's free for small usage)", 'bonkers-addons'), 'https://developers.google.com/maps/documentation/javascript/get-api-key' )
+                    'description' => sprintf( __("An API Key is required for Google Maps to work. <a href='%s' target='_blank'>Sign up for one here</a> (it's free for small usage)", 'bonkers-addons'), 'https://developers.google.com/maps/documentation/javascript/get-api-key' )
                 ) );
 
-                $wp_customize->add_setting( 'bonkers_addons_contact_lat_long', array( 'type' => 'option', 'default' => '40.725987, -74.002447', 'sanitize_callback' => 'bonkers_addons_sanitize_lat_long', ) );
-                $wp_customize->add_control( 'bonkers_addons_contact_lat_long', array(
+                $wp_customize->add_setting( 'bonkers_addons_contact_address', array( 'type' => 'option', 'default' => 'Central Park, New York, NY, United States', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
+                $wp_customize->add_control( 'bonkers_addons_contact_address', array(
                     'type' => 'text',
                     'section' => 'bonkers_addons_contact_section', // Required, core or custom.
-                    'label' => esc_attr__( "Latitude and Longitude", 'bonkers-addons' ),
-                    'description' => esc_attr__( 'Comma separated. Example: 40.725987, -74.002447', 'bonkers-addons' )
+                    'label' => esc_attr__( "Address", 'bonkers-addons' ),
                 ) );
 
                 $wp_customize->add_setting( 'bonkers_addons_contact_zoom', array( 'type' => 'option', 'default' => '13', 'sanitize_callback' => 'bonkers_addons_sanitize_integer', ) );
-                $wp_customize->add_control( 'bonkers_addons_contact_zoom', array(
-                    'type' => 'text',
-                    'section' => 'bonkers_addons_contact_section', // Required, core or custom.
+                $wp_customize->add_control( new Epsilon_Control_Slider( $wp_customize, 'bonkers_addons_contact_zoom', array(
+                    'type' => 'epsilon-slider',
                     'label' => esc_attr__( "Zoom", 'bonkers-addons' ),
-                ) );
+                    'choices' => array(
+                      	'min'  => 1,
+                      	'max'  => 20,
+                      	'step' => 1,
+                    ),
+                    'section'     => 'bonkers_addons_contact_section',
+                ) ) );
 
-                $wp_customize->add_setting( 'bonkers_addons_contact_link_title', array( 'type' => 'option', 'default' => esc_html__( 'Send', 'bonkers-addons' ), 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
-                $wp_customize->add_control( 'bonkers_addons_contact_link_title', array(
-                    'type' => 'text',
-                    'section' => 'bonkers_addons_contact_section', // Required, core or custom.
-                    'label' => esc_attr__( "Button Text", 'bonkers-addons' ),
-                ) );
+                if ( ! Bonkers_Helper::has_plugin( 'contact-form-7' ) ) {
+                	$wp_customize->add_setting( 'bonkers_addons_installcf7', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
+	                $wp_customize->add_control( new bonkers_addons_Display_Text_Control( $wp_customize, 'bonkers_addons_installcf7', array(
+	                    'section' => 'bonkers_addons_contact_section', // Required, core or custom.
+	                    'label' => esc_attr__( "Contact Form", 'bonkers-addons' ),
+	                    'description' => esc_attr__( "Please install Contact Form 7 in order to add a contact form to this section", 'bonkers-addons' ),
+	                ) ) );
+                }else{
 
-                $bonkers_addons_form_args = array( 'post_type' => 'wpcf7_contact_form', 'posts_per_page' => -1 );
-                $bonkers_addons_form_list = get_posts( $bonkers_addons_form_args );
-                $bonkers_addons_forms = wp_list_pluck( $bonkers_addons_form_list , 'post_title', 'ID' );
+                	$bonkers_addons_form_args = array( 'post_type' => 'wpcf7_contact_form', 'posts_per_page' => -1 );
+	                $bonkers_addons_form_list = get_posts( $bonkers_addons_form_args );
+	                $bonkers_addons_forms = wp_list_pluck( $bonkers_addons_form_list , 'post_title', 'ID' );
 
-                $wp_customize->add_setting( 'bonkers_addons_contact_form', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
-                $wp_customize->add_control( 'bonkers_addons_contact_form', array(
-                    'type' => 'select',
-                    'section' => 'bonkers_addons_contact_section', // Required, core or custom.
-                    'choices'     => $bonkers_addons_forms,
-                    'label' => esc_attr__( "Select Form", 'bonkers-addons' ),
-                    'description' => esc_attr__( 'Forms are obtained from the Contact Form 7 plugin.', 'bonkers-addons' ),
-                ) );
+	                if ( empty( $bonkers_addons_forms ) ) {
+	                	$wp_customize->add_setting( 'bonkers_addons_create_form', array( 'type' => 'option', 'default' => '', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
+		                $wp_customize->add_control( new bonkers_addons_Display_Text_Control( $wp_customize, 'bonkers_addons_create_form', array(
+		                    'section' => 'bonkers_addons_contact_section', // Required, core or custom.
+		                    'label' => esc_attr__( "Contact Form", 'bonkers-addons' ),
+		                    'description' => esc_attr__( "Please go and create a form in order to have somethign to show in this section", 'bonkers-addons' ),
+		                ) ) );
+	                }else{
+	                	$bonkers_addons_forms[0] = esc_attr__( "Select Form", 'bonkers-addons' );
+	                	$wp_customize->add_setting( 'bonkers_addons_contact_form', array( 'type' => 'option', 'default' => '0', 'sanitize_callback' => 'bonkers_addons_sanitize_text', ) );
+		                $wp_customize->add_control( 'bonkers_addons_contact_form', array(
+		                    'type' => 'select',
+		                    'section' => 'bonkers_addons_contact_section', // Required, core or custom.
+		                    'choices'     => $bonkers_addons_forms,
+		                    'label' => esc_attr__( "Contact Form", 'bonkers-addons' ),
+		                    'description' => esc_attr__( 'Forms are obtained from the Contact Form 7 plugin.', 'bonkers-addons' ),
+		                ) );
+	                }
+                	
+                }
 
                 $wp_customize->add_setting( 'bonkers_addons_contact_enable', array( 'type' => 'option', 'default' => '1', 'transport' => 'refresh', 'sanitize_callback' => 'bonkers_addons_sanitize_integer', ) );
                 if ( class_exists( 'Epsilon_Control_Toggle' ) ) {
@@ -699,8 +716,12 @@ function bonkers_addons_init(){
                         'span' => array(),
                     );
                     $label = wp_kses( $this->label, $wp_kses_args );
+                    $description = wp_kses( $this->description, $wp_kses_args );
                     ?>
-                    <p><?php echo $label; ?></p>
+                    <label>
+						<span class="customize-control-title"><?php echo $label; ?></span>
+						<span class="description customize-control-description"><?php echo $description; ?></span>
+					</label>
                 <?php
                 }
             }
