@@ -11,6 +11,7 @@ class Bonkers_Client_Logo extends WP_Widget{
             esc_attr__( 'Bonkers - Client Logo', 'bonkers' ), // Name
             array( 
                 'description' => esc_attr__( 'Display a client logo.', 'bonkers' ),
+                'customize_selective_refresh' => true,
             )
         );
 
@@ -42,7 +43,7 @@ class Bonkers_Client_Logo extends WP_Widget{
 
         ?>
         <div class="bonkers-clients-logo">
-            <?php if( ! empty( $instance['link'] ) ): ?><a href="#" target="_blank"><?php endif; ?>
+            <?php if( ! empty( $instance['link'] ) ): ?><a href="<?php echo $instance['link'] ?>" target="_blank"><?php endif; ?>
                 <?php if( ! empty( $instance['image_uri'] ) ): ?>
                     <img src="<?php echo esc_url( $instance['image_uri'] ); ?>" alt="" class="bonkers-clients-image">
                 <?php endif; ?>

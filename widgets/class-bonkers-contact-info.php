@@ -11,6 +11,7 @@ class Bonkers_Contact_Info extends WP_Widget{
             esc_attr__( 'Bonkers - Contact Info', 'bonkers' ), // Name
             array(
                 'description' => esc_attr__( 'Display contact info.', 'bonkers' ),
+                'customize_selective_refresh' => true,
             )
         );
     }

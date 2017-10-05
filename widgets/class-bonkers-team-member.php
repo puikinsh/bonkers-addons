@@ -11,6 +11,7 @@ class Bonkers_Team_Member extends WP_Widget{
             esc_attr__( 'Bonkers - Team Member', 'bonkers' ), // Name
             array( 
                 'description' => esc_attr__( 'Display info about a team member.', 'bonkers' ),
+                'customize_selective_refresh' => true,
             )
         );
 

@@ -11,6 +11,7 @@ class Bonkers_Service extends WP_Widget{
             esc_attr__( 'Bonkers - Service widget', 'bonkers' ), // Name
             array( 
                 'description' => esc_attr__( 'Display a Service or Feature description.', 'bonkers' ),
+                'customize_selective_refresh' => true,
             )
         );
 

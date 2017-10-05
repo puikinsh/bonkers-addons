@@ -11,6 +11,7 @@ class Bonkers_Phone_Feature extends WP_Widget{
             esc_attr__( 'Bonkers - Phone Feature', 'bonkers' ), // Name
             array( 
                 'description' => esc_attr__( 'Display a Phone Feature description.', 'bonkers' ),
+                'customize_selective_refresh' => true,
             )
         );
 
