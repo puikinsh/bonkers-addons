@@ -125,8 +125,13 @@ function bonkers_addons_init(){
                     'label' => esc_attr__( "Link URL", 'bonkers-addons' ),
                 ) );
 
-                $wp_customize->add_setting( 'bonkers_addons_welcome_image', array( 'type' => 'option', 'default' => '', 'transport' => 'postMessage', 'sanitize_callback' => 'attachment_url_to_postid', ) );
-                $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bonkers_addons_welcome_image', array(
+                $wp_customize->add_setting( 'bonkers_addons_welcome_image', array(
+                    'type' => 'option',
+                    'default' => esc_url( get_template_directory_uri() ) . '/images/StockSnap_1A3MXAT0M6.jpg',
+                    'transport' => 'postMessage',
+                    'sanitize_callback' => 'bonkers_addons_sanitize_url',
+                ) );
+                $wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'bonkers_addons_welcome_image', array(
                     'label'    => esc_attr__( 'Welcome Image', 'bonkers-addons' ),
                     'section'  => 'bonkers_addons_welcome_section',
                 ) ) );
@@ -237,7 +242,12 @@ function bonkers_addons_init(){
                     'label' => esc_attr__( "Link URL", 'bonkers-addons' ),
                 ) );
 
-                $wp_customize->add_setting( 'bonkers_addons_image_image', array( 'type' => 'option', 'default' => '', 'transport' => 'postMessage', 'sanitize_callback' => 'attachment_url_to_postid', ) );
+                $wp_customize->add_setting( 'bonkers_addons_image_image', array(
+                    'type' => 'option',
+                    'default' => esc_url( get_template_directory_uri() ) . '/images/StockSnap_JBW2PXDOL6.jpg',
+                    'transport' => 'postMessage',
+                    'sanitize_callback' => 'bonkers_addons_sanitize_url',
+                    ) );
                 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bonkers_addons_image_image', array(
                     'label'    => esc_attr__( 'Image', 'bonkers-addons' ),
                     'section'  => 'bonkers_addons_image_section',
@@ -286,7 +296,7 @@ function bonkers_addons_init(){
                     'priority' => $sections_sorted['bonkers_addons_phone_section'],
                 ) );
 
-                $wp_customize->add_setting( 'bonkers_addons_phone_image', array( 'type' => 'option', 'default' => '', 'transport' => 'postMessage', 'sanitize_callback' => 'attachment_url_to_postid', ) );
+                $wp_customize->add_setting( 'bonkers_addons_phone_image', array( 'type' => 'option', 'default' => '', 'transport' => 'postMessage', 'sanitize_callback' => 'bonkers_addons_sanitize_url', ) );
                 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bonkers_addons_phone_image', array(
                     'label'    => esc_attr__( 'Image', 'bonkers-addons' ),
                     'description' => esc_attr__( 'Recommended size: 640x1136px.', 'bonkers-addons' ),
@@ -366,7 +376,12 @@ function bonkers_addons_init(){
                     'label' => esc_attr__( "Link URL", 'bonkers-addons' ),
                 ) );
 
-                $wp_customize->add_setting( 'bonkers_addons_cta_image', array( 'type' => 'option', 'default' => '', 'transport' => 'postMessage', 'sanitize_callback' => 'attachment_url_to_postid', ) );
+                $wp_customize->add_setting( 'bonkers_addons_cta_image', array(
+                    'type' => 'option',
+                    'default' => esc_url( get_template_directory_uri() ) . '/images/StockSnap_R7GVMRJWW9.jpg',
+                    'transport' => 'postMessage',
+                    'sanitize_callback' => 'bonkers_addons_sanitize_url',
+                ) );
                 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bonkers_addons_cta_image', array(
                     'label'    => esc_attr__( 'Image', 'bonkers-addons' ),
                     'section'  => 'bonkers_addons_cta_section',
