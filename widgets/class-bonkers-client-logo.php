@@ -76,8 +76,6 @@ class Bonkers_Client_Logo extends WP_Widget{
 
         $instance['link'] = strip_tags( esc_url( $new_instance['link'] ) );
 
-        $instance['title'] = strip_tags($new_instance['title']);
-
         $instance['image_uri'] = strip_tags($new_instance['image_uri']);
 
         return $instance;
