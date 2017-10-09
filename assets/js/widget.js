@@ -1,44 +1,40 @@
-jQuery(document).ready( function($) {
+jQuery( document ).ready( function( $ ) {// jscs:ignore validateLineBreaks
 
-    function media_upload(button_class) {
+    function mediaUpload( buttonClass ) {
 
-        var _custom_media = true,
+        var _customMedia = true,
 
-        _orig_send_attachment = wp.media.editor.send.attachment;
+        _origSendAttachment = wp.media.editor.send.attachment;
 
-        $('body').on('click', button_class, function(e) {
+        $( 'body' ).on( 'click', buttonClass, function() {
 
-            var button_id ='#'+$(this).attr('id');
+            var buttonID = '#' + $( this ).attr( 'id' );
 
-            var self = $(button_id);
+            var button = $( buttonID );
 
-            var send_attachment_bkp = wp.media.editor.send.attachment;
+            var id = button.attr( 'id' ).replace( '_button', '' );
 
-            var button = $(button_id);
+            _customMedia = true;
 
-            var id = button.attr('id').replace('_button', '');
+            wp.media.editor.send.attachment = function( props, attachment ) {
 
-            _custom_media = true;
+                if ( _customMedia  ) {
 
-            wp.media.editor.send.attachment = function(props, attachment){
+                    $( '.custom_media_id' ).val( attachment.id );
 
-                if ( _custom_media  ) {
+                    $( '.custom_media_url' ).val( attachment.url );
 
-                    $('.custom_media_id').val(attachment.id);
-
-                    $('.custom_media_url').val(attachment.url);
-
-                    $('.custom_media_image').attr('src',attachment.url).css('display','block');
+                    $( '.custom_media_image' ).attr( 'src', attachment.url ).css( 'display', 'block' );
 
                 } else {
 
-                    return _orig_send_attachment.apply( button_id, [props, attachment] );
+                    return _origSendAttachment.apply( buttonID, [props, attachment] );
 
                 }
 
             };
 
-            wp.media.editor.open(button);
+            wp.media.editor.open( button );
 
                 return false;
 
@@ -46,6 +42,6 @@ jQuery(document).ready( function($) {
 
     }
 
-    media_upload('.custom_media_button.button');
+    mediaUpload( '.custom_media_button.button' );
 
 });
