@@ -1,6 +1,6 @@
 === Bonkers Addons ===
-Contributors: nicoandrade
-Tags: shortcodes
+Contributors: giucu91
+Tags: shortcodes, companion, widgets
 Requires at least: 3.7
 Tested up to: 4.7.2
 Stable tag: 1.0.0
