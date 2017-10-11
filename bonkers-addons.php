@@ -101,11 +101,19 @@ function bonkers_addons_init() {
 					'transport' => 'postMessage',
 					'sanitize_callback' => 'bonkers_addons_sanitize_text_html',
 				) );
-				$wp_customize->add_control( 'bonkers_addons_welcome_title', array(
-					'type' => 'text',
-					'section' => 'bonkers_addons_welcome_section', // Required, core or custom.
-					'label' => esc_attr__( 'Welcome Message', 'bonkers-addons' ),
-				) );
+				
+				if ( class_exists( 'Epsilon_Control_Text_Editor' ) ) {
+					$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, 'bonkers_addons_welcome_title', array(
+						'section' => 'bonkers_addons_welcome_section', // Required, core or custom.
+						'label' => esc_attr__( 'Welcome Messag', 'bonkers-addons' ),
+					) ) );
+				} else {
+					$wp_customize->add_control( 'bonkers_addons_welcome_title', array(
+						'type' => 'textarea',
+						'section' => 'bonkers_addons_welcome_section', // Required, core or custom.
+						'label' => esc_attr__( 'Welcome Messag', 'bonkers-addons' ),
+					) );
+				}
 				$wp_customize->selective_refresh->add_partial( 'bonkers_addons_welcome_title', array(
 					'selector' => '#bonkers-welcome-section .bonkers-intro-line',
 				) );
@@ -228,11 +236,18 @@ function bonkers_addons_init() {
 					'transport' => 'postMessage',
 					'sanitize_callback' => 'bonkers_addons_sanitize_text_html',
 				) );
-				$wp_customize->add_control( 'bonkers_addons_image_title', array(
-					'type' => 'text',
-					'section' => 'bonkers_addons_image_section', // Required, core or custom.
-					'label' => esc_attr__( 'Title', 'bonkers-addons' ),
-				) );
+				if ( class_exists( 'Epsilon_Control_Text_Editor' ) ) {
+					$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, 'bonkers_addons_image_title', array(
+						'section' => 'bonkers_addons_image_section', // Required, core or custom.
+						'label' => esc_attr__( 'Title', 'bonkers-addons' ),
+					) ) );
+				} else {
+					$wp_customize->add_control( 'bonkers_addons_image_title', array(
+						'type' => 'textarea',
+						'section' => 'bonkers_addons_image_section', // Required, core or custom.
+						'label' => esc_attr__( 'Title', 'bonkers-addons' ),
+					) );
+				}
 				$wp_customize->selective_refresh->add_partial( 'bonkers_addons_image_title', array(
 					'selector' => '#bonkers-image-section .bonkers-image-section-title',
 				) );
@@ -428,11 +443,18 @@ function bonkers_addons_init() {
 					'transport' => 'postMessage',
 					'sanitize_callback' => 'bonkers_addons_sanitize_text_html',
 				) );
-				$wp_customize->add_control( 'bonkers_addons_cta_title', array(
-					'type' => 'text',
-					'section' => 'bonkers_addons_cta_section', // Required, core or custom.
-					'label' => esc_attr__( 'Title', 'bonkers-addons' ),
-				) );
+				if ( class_exists( 'Epsilon_Control_Text_Editor' ) ) {
+					$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, 'bonkers_addons_cta_title', array(
+						'section' => 'bonkers_addons_cta_section', // Required, core or custom.
+						'label' => esc_attr__( 'Title', 'bonkers-addons' ),
+					) ) );
+				} else {
+					$wp_customize->add_control( 'bonkers_addons_cta_title', array(
+						'type' => 'textarea',
+						'section' => 'bonkers_addons_cta_section', // Required, core or custom.
+						'label' => esc_attr__( 'Title', 'bonkers-addons' ),
+					) );
+				}
 				$wp_customize->selective_refresh->add_partial( 'bonkers_addons_cta_title', array(
 					'selector' => '#bonkers-cta-section .bonkers-cta-title',
 				) );
@@ -707,15 +729,20 @@ function bonkers_addons_init() {
 					'selector' => '#bonkers-subscribe-section .contact-form > div',
 				) );
 
-				$wp_customize->add_setting( 'bonkers_addons_subscribe_expl', array(
+				$wp_customize->add_setting( 'bonkers_addons_subscribe_mailchimp_link', array(
 					'type' => 'option',
-					'default' => '',
-					'sanitize_callback' => 'bonkers_addons_sanitize_text',
+					'transport' => 'refresh',
+					'sanitize_callback' => 'esc_url_raw',
 				) );
-				$wp_customize->add_control( new Bonkers_Addons_Display_Text_Control( $wp_customize, 'bonkers_addons_subscribe_expl', array(
+				$wp_customize->add_control( 'bonkers_addons_subscribe_mailchimp_link', array(
+					'type' => 'text',
 					'section' => 'bonkers_addons_subscribe_section', // Required, core or custom.
-					'description' => __( 'Make sure that you have Jetpack plugin installed and you can find your subscribers on your Admin Panel > Feedback', 'bonkers-addons' ),
-				) ) );
+					'label' => esc_attr__( 'MailChimp Signup form URL', 'bonkers-addons' ),
+					'description' => sprintf(
+						esc_html__( 'In order to get this link please follow the tutorial from %s until pas 4', 'bonkers-addons' ),
+						'<a href="https://shopify.barrelny.com/where-do-i-find-the-mailchimp-signup-url/" target="_blank">' . esc_html__( 'here', 'bonkers-addons' ) . '</a>'
+					),
+				) );
 
 				$wp_customize->add_setting( 'bonkers_addons_subscribe_enable', array(
 					'type' => 'option',
