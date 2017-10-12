@@ -1,6 +1,6 @@
 <?php
 /**
-* Function for Adding Quema Labs Products Slider Component on vc_init hook
+* Function for Adding Colorlib Products Slider Component on vc_init hook
 *
 * @param void
 *
@@ -55,7 +55,7 @@ add_action( 'vc_before_init', 'bonkers_addons_component_instagram_box' );
 
 
 /**
-* Function for displaying Quema Labs Products Slider functionality
+* Function for displaying Colorlib Products Slider functionality
 *
 * @return string $html - the HTML content for this shortcode.
 */
