@@ -62,7 +62,7 @@ module.exports = function(grunt) {
               '!composer.json',
               '!composer.lock',
               '!set_tags.sh',
-              '!bonkers.zip',
+              '!bonkers-addons.zip',
               '!nbproject/**' ],
           dest: 'build/'
       }
