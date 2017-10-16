@@ -45,8 +45,13 @@ class Bonkers_Phone_Feature extends WP_Widget {
 				<?php endif; ?>
 
 				<div class="bonkers-phone-service-content">
-					<h4><?php if ( ! empty( $instance['title'] ) ) : echo apply_filters( 'widget_title', $instance['title'] );
-endif; ?></h4>
+					<h4>
+					<?php
+					if ( ! empty( $instance['title'] ) ) :
+						echo apply_filters( 'widget_title', $instance['title'] );
+endif;
+?>
+</h4>
 					<?php
 					if ( ! empty( $instance['text'] ) ) :
 
@@ -63,8 +68,9 @@ endif; ?></h4>
 							echo htmlspecialchars_decode( wp_kses( apply_filters( 'widget_title', $instance['text'] ), $wp_kses_args ) );
 						echo '</p>';
 					endif;
-					?> 
-				</div>
+					?>
+
+									 </div>
 				<div class="clearfix"></div>
 			</div><!-- bonkers-phone-service -->
 
@@ -136,7 +142,12 @@ endif; ?></h4>
 
 
 			<input type="text" class="widefat custom_media_url" name="<?php echo esc_attr( $this->get_field_name( 'image_uri' ) ); ?>"
-				   id="<?php echo esc_attr( $this->get_field_id( 'image_uri' ) ); ?>" value="<?php if ( ! empty( $instance['image_uri'] ) ) { echo esc_attr( $instance['image_uri'] ); } ?>"
+				   id="<?php echo esc_attr( $this->get_field_id( 'image_uri' ) ); ?>" value="
+									<?php
+									if ( ! empty( $instance['image_uri'] ) ) {
+										echo esc_attr( $instance['image_uri'] ); }
+?>
+"
 				   style="margin-top:5px;">
 
 
@@ -152,7 +163,12 @@ endif; ?></h4>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'bonkers-addons' ); ?></label><br/>
 
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
-				   id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php if ( ! empty( $instance['title'] ) ) { echo esc_attr( $instance['title'] ); } ?>"
+				   id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="
+									<?php
+									if ( ! empty( $instance['title'] ) ) {
+										echo esc_attr( $instance['title'] ); }
+?>
+"
 				   class="widefat"/>
 
 		</p>
@@ -162,10 +178,13 @@ endif; ?></h4>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Text', 'bonkers-addons' ); ?></label><br/>
 
 			<textarea class="widefat" rows="8" cols="20" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>"
-					  id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php
-						if ( ! empty( $instance['text'] ) ) : echo htmlspecialchars_decode( wp_kses_post( $instance['text'] ) );
+					  id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>">
+										<?php
+										if ( ! empty( $instance['text'] ) ) :
+											echo htmlspecialchars_decode( wp_kses_post( $instance['text'] ) );
 endif;
-			?></textarea>
+			?>
+			</textarea>
 
 		</p>
 
