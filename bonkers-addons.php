@@ -81,7 +81,7 @@ function bonkers_addons_init() {
 			$wp_customize->add_panel(
 				'bonkers_addons_front_page_sections', array(
 					'title' => esc_attr__( 'Front Page Sections', 'bonkers-addons' ),
-					'description' => esc_html__( 'Drag & Drop the sections to change order', 'bonkers' ),
+					'description' => esc_html__( 'Drag & Drop the sections to change order', 'bonkers-addons' ),
 					'priority' => 160,
 					'active_callback' => 'is_front_page',
 				)

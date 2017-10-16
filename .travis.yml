@@ -44,18 +44,6 @@ script:
   --extensions=php; fi
 - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/*.php --standard=./phpcs.ruleset.xml
   --extensions=php --ignore=./inc/plugin-activation.php,./node_modules/*.php; fi
-- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/**/*.php
-  --standard=./phpcs.ruleset.xml --extensions=php --ignore=./node_modules/**/*.php;
-  fi
-- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/**/**/*.php
-  --standard=./phpcs.ruleset.xml --extensions=php --ignore=./node_modules/**/**/*.php;
-  fi
-- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/**/**/**/*.php
-  --standard=./phpcs.ruleset.xml --extensions=php --ignore=./node_modules/**/**/**/*.php;
-  fi
-- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/**/**/**/**/*.php
-  --standard=./phpcs.ruleset.xml --extensions=php --ignore=./node_modules/**/**/**/**/*.php;
-  fi
 notifications:
   email: false
 cache:
@@ -64,4 +52,13 @@ cache:
 after_success:
 - if [[ "$DEPLOY" == "1" ]]; then grunt build-archive; fi
 - if [[ "$DEPLOY" == "1" ]]; then sh set_tags.sh; fi
-
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: Htc5VHnAZseU5tX9uF+8CSI2/GxXpK8aohP835hecu5D+QsFPq0CmzwRV9UQPuBPr2tNU34qGJtnOI1NN/X7/OtsxGCer61OAZTshj8pOZSWnVrET3P4aNbXSM0/iikEyFFw1ZRBYRD+TeGO4Pg9ts1ZAGUYVvc/vks3YKb5xR4N4eU7xSO+2PoZmy6h+8Mxg66HNwEXxOLcbvLmn/rKO3Y3u4P6+grzo+wzMflKqluAGmYqEMUwWEmqtRCKz+bJcYgZfPzCpwP83aCqD+Zzw4+FHP67rju0kA0OvLZFi6+COHBNlrPwxg/Pteh0PJqHPLK4NsHmr6icltyZI2KVhs9wC9vMkMLTGhMjCQuQykHwOEaeV+VNgYepU5REOqxiZs4mZJrIYZcm39EV1wmvAieUrbawgzR4qVmd848bhoH2h91UEI2Xc6Fca0THO7VCeCspncXxNFVMIvv1BGB5grBnT0yhn1JcARX9eXs32ky/ONPpkzzNdaeHmR0qLPzLKY3H7fNwENLOnsPtV/sRQ1l/FRGkcRLza2WXYz9RrPvAjLucQVfvnXgPvW46+eOfn3hwE4KHmZyjIGI1KESz3uJOM19MRCPbujNnBnQ0pexpWK2MnEMiq0WjSObJ4UEzzVRA8dodg8t5L5LklDN37zYrepNdLWNBBQIVaOD2LUg=
+  file: bonkers-addons.zip
+  on:
+    repo: puikinsh/bonkers-addons
+    branch: 'master'
+    condition: "$DEPLOY = 1"
