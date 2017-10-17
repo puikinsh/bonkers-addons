@@ -42,11 +42,17 @@ class Bonkers_Client_Logo extends WP_Widget {
 
 		?>
 		<div class="bonkers-clients-logo">
-			<?php if ( ! empty( $instance['link'] ) ) : ?><a href="<?php echo esc_url( $instance['link'] ) ?>" target="_blank"><?php endif; ?>
+			<?php
+			if ( ! empty( $instance['link'] ) ) :
+?>
+<a href="<?php echo esc_url( $instance['link'] ); ?>" target="_blank"><?php endif; ?>
 				<?php if ( ! empty( $instance['image_uri'] ) ) : ?>
 					<img src="<?php echo esc_url( $instance['image_uri'] ); ?>" alt="" class="bonkers-clients-image">
 				<?php endif; ?>
-			<?php if ( ! empty( $instance['link'] ) ) : ?></a><?php endif; ?>
+			<?php
+			if ( ! empty( $instance['link'] ) ) :
+?>
+</a><?php endif; ?>
 		</div>
 		<?php
 
@@ -77,13 +83,7 @@ class Bonkers_Client_Logo extends WP_Widget {
 		$instance['image_uri'] = esc_url_raw( $new_instance['image_uri'] );
 
 		return $instance;
-
 	}
-
-
-
-
-
 
 	/**
 	 * Back-end widget form.
@@ -93,6 +93,13 @@ class Bonkers_Client_Logo extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
+
+		$defaults = array(
+			'image_uri' => '',
+			'link' => '',
+		);
+
+		$instance = wp_parse_args( $instance, $defaults );
 
 		?>
 		<p>
@@ -110,9 +117,7 @@ class Bonkers_Client_Logo extends WP_Widget {
 			?>
 
 			<input type="text" class="widefat custom_media_url" name="<?php echo esc_attr( $this->get_field_name( 'image_uri' ) ); ?>"
-				   id="<?php echo esc_attr( $this->get_field_id( 'image_uri' ) ); ?>" value="<?php if ( ! empty( $instance['image_uri'] ) ) : echo esc_attr( $instance['image_uri'] );
-endif; ?>"
-				   style="margin-top:5px;">
+				   id="<?php echo esc_attr( $this->get_field_id( 'image_uri' ) ); ?>" value="<?php echo esc_attr( $instance['image_uri'] ); ?>" style="margin-top:5px;">
 
 			<input type="button" class="button button-primary custom_media_button" id="custom_media_button"
 				   name="<?php echo esc_attr( $this->get_field_name( 'image_uri' ) ); ?>" value="<?php esc_attr_e( 'Upload Image', 'bonkers-addons' ); ?>"
@@ -125,9 +130,7 @@ endif; ?>"
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>"><?php esc_html_e( 'Link', 'bonkers-addons' ); ?></label><br/>
 
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link' ) ); ?>"
-				   id="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>" value="<?php if ( ! empty( $instance['link'] ) ) : echo esc_attr( $instance['link'] );
-endif; ?>"
-				   class="widefat"/>
+				   id="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>" value="<?php echo esc_attr( $instance['link'] ); ?>"  class="widefat"/>
 
 		</p>
 

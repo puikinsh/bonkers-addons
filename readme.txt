@@ -1,5 +1,5 @@
 === Bonkers Addons ===
-Contributors: giucu91
+Contributors: silkalns, machothemes, colorlibplugins, giucu91
 Tags: shortcodes, companion, widgets
 Requires at least: 3.7
 Tested up to: 4.7.2

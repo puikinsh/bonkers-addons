@@ -55,8 +55,13 @@ class Bonkers_Service extends WP_Widget {
 					<img src="<?php echo esc_url( $instance['image_uri'] ); ?>" alt="" class="bonkers-service-icon"/>
 				<?php endif; ?>
 
-				<h4><?php if ( ! empty( $instance['title'] ) ) : echo wp_kses( apply_filters( 'widget_title', $instance['title'] ), $wp_kses_args );
-endif; ?></h4>
+				<h4>
+				<?php
+				if ( ! empty( $instance['title'] ) ) :
+					echo wp_kses( apply_filters( 'widget_title', $instance['title'] ), $wp_kses_args );
+endif;
+?>
+</h4>
 
 				<?php
 				if ( ! empty( $instance['text'] ) ) :
@@ -65,10 +70,16 @@ endif; ?></h4>
 						echo htmlspecialchars_decode( wp_kses( apply_filters( 'widget_title', $instance['text'] ), $wp_kses_args ) );
 					echo '</p>';
 				endif;
-				?>  
-				<?php if ( ! empty( $instance['link'] ) ) : ?>
-				<a href="<?php echo esc_url( $instance['link'] ); ?>" class="bonkers-service-btn"><?php if ( ! empty( $instance['link_title'] ) ) : echo esc_html( $instance['link_title'] );
-endif; ?></a>
+				?>
+
+									<?php if ( ! empty( $instance['link'] ) ) : ?>
+				<a href="<?php echo esc_url( $instance['link'] ); ?>" class="bonkers-service-btn">
+									<?php
+									if ( ! empty( $instance['link_title'] ) ) :
+										echo esc_html( $instance['link_title'] );
+endif;
+?>
+</a>
 				<?php endif; ?>
 				<div class="clearfix"></div>
 			</div><!-- service -->
@@ -121,6 +132,16 @@ endif; ?></a>
 	 */
 	public function form( $instance ) {
 
+		$defaults = array(
+			'text' => '',
+			'title' => '',
+			'link_title' => '',
+			'link' => '',
+			'image_uri' => '',
+		);
+
+		$instance = wp_parse_args( $instance, $defaults );
+
 		?>
 		<p>
 
@@ -141,9 +162,7 @@ endif; ?></a>
 
 
 			<input type="text" class="widefat custom_media_url" name="<?php echo esc_attr( $this->get_field_name( 'image_uri' ) ); ?>"
-				   id="<?php echo esc_attr( $this->get_field_id( 'image_uri' ) ); ?>" value="<?php if ( ! empty( $instance['image_uri'] ) ) : echo esc_attr( $instance['image_uri'] );
-endif; ?>"
-				   style="margin-top:5px;">
+				   id="<?php echo esc_attr( $this->get_field_id( 'image_uri' ) ); ?>" value="<?php echo esc_attr( $instance['image_uri'] ); ?>" style="margin-top:5px;">
 
 
 			<input type="button" class="button button-primary custom_media_button" id="custom_media_button"
@@ -158,9 +177,7 @@ endif; ?>"
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'bonkers-addons' ); ?></label><br/>
 
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
-				   id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php if ( ! empty( $instance['title'] ) ) : echo esc_attr( $instance['title'] );
-endif; ?>"
-				   class="widefat"/>
+				   id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat"/>
 
 		</p>
 
@@ -169,10 +186,7 @@ endif; ?>"
 			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Text', 'bonkers-addons' ); ?></label><br/>
 
 			<textarea class="widefat" rows="8" cols="20" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>"
-					  id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php
-						if ( ! empty( $instance['text'] ) ) : echo htmlspecialchars_decode( $instance['text'] );
-endif;
-			?></textarea>
+					  id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php echo htmlspecialchars_decode( $instance['text'] ); ?></textarea>
 
 		</p>
 
@@ -180,16 +194,14 @@ endif;
 
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_title' ) ); ?>"><?php esc_html_e( 'Link Title','bonkers-addons' ); ?></label><br />
 
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_title' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_title' ) ); ?>" value="<?php if ( ! empty( $instance['link_title'] ) ) : echo esc_attr( $instance['link_title'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_title' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_title' ) ); ?>" value="<?php echo esc_attr( $instance['link_title'] ); ?>" class="widefat" />
 
 		</p>
 		<p>
 
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>"><?php esc_html_e( 'Link','bonkers-addons' ); ?></label><br />
 
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>" value="<?php if ( ! empty( $instance['link'] ) ) : echo esc_attr( $instance['link'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>" value="<?php echo esc_attr( $instance['link'] ); ?>" class="widefat" />
 
 		</p>
 

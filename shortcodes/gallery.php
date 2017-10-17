@@ -1,6 +1,6 @@
 <?php
 /**
-* Function for Adding Quema Labs Carousel Component on vc_init hook
+* Function for Adding Colorlib Carousel Component on vc_init hook
 *
 * @param void
 *
@@ -45,7 +45,7 @@ add_action( 'vc_before_init', 'bonkers_addons_component_gallery' );
 
 
 /**
-* Function for displaying Quema Labs Carousel functionality
+* Function for displaying Colorlib Carousel functionality
 *
 * @return string $html - the HTML content for this shortcode.
 */

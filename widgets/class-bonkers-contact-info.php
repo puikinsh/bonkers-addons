@@ -35,15 +35,18 @@ class Bonkers_Contact_Info extends WP_Widget {
 
 			<div class="widget_contact_info">
 
-				<?php if ( ! empty( $title ) ) : echo $args['before_title'] . wp_kses_post( $title ) . $args['after_title'];
-endif; ?>
+				<?php
+				if ( ! empty( $title ) ) :
+					echo $args['before_title'] . wp_kses_post( $title ) . $args['after_title'];
+endif;
+?>
 
 				<ul>
 					<?php if ( ! empty( $instance['address'] ) ) { ?>
 						<li class="location"><i class="fa fa-map-marker"></i> <?php echo esc_html( $instance['address'] ); ?></li>
 					<?php } ?>
 					<?php if ( ! empty( $instance['email'] ) ) { ?>
-					<li class="email"><i class="fa fa-envelope-o"></i> <a href="mailto:<?php echo antispambot( $instance['email'] ); ?>"><?php  echo antispambot( $instance['email'] ); ?></a></li>
+					<li class="email"><i class="fa fa-envelope-o"></i> <a href="mailto:<?php echo antispambot( $instance['email'] ); ?>"><?php echo antispambot( $instance['email'] ); ?></a></li>
 					<?php } ?>
 					<?php if ( ! empty( $instance['phone'] ) ) { ?>
 					<li class="phone"><i class="fa fa-phone"></i> <?php echo esc_html( $instance['phone'] ); ?></li>
@@ -108,6 +111,16 @@ endif; ?>
 	 */
 	public function form( $instance ) {
 
+		$defaults = array(
+			'title' => '',
+			'address' => '',
+			'email' => '',
+			'phone' => '',
+			'website' => '',
+		);
+
+		$instance = wp_parse_args( $instance, $defaults );
+
 		?>
 
 		<p>
@@ -115,9 +128,7 @@ endif; ?>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'bonkers-addons' ); ?></label><br/>
 
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
-				   id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php if ( ! empty( $instance['title'] ) ) : echo esc_attr( $instance['title'] );
-endif; ?>"
-				   class="widefat"/>
+				   id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat"/>
 
 		</p>
 
@@ -125,29 +136,25 @@ endif; ?>"
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>"><?php esc_html_e( 'Address', 'bonkers-addons' ); ?></label><br />
 
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'address' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>" value="<?php if ( ! empty( $instance['address'] ) ) : echo esc_attr( $instance['address'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'address' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>" value="<?php echo esc_attr( $instance['address'] ); ?>" class="widefat" />
 		</p>
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>"><?php esc_html_e( 'Email', 'bonkers-addons' ); ?></label><br />
 
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" value="<?php if ( ! empty( $instance['email'] ) ) : echo esc_attr( $instance['email'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" value="<?php echo esc_attr( $instance['email'] ); ?>" class="widefat" />
 		</p>
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>"><?php esc_html_e( 'Phone', 'bonkers-addons' ); ?></label><br />
 
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'phone' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>" value="<?php if ( ! empty( $instance['phone'] ) ) : echo esc_attr( $instance['phone'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'phone' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>" value="<?php echo esc_attr( $instance['phone'] ); ?>" class="widefat" />
 		</p>
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'website' ) ); ?>"><?php esc_html_e( 'Website', 'bonkers-addons' ); ?></label><br />
 
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'website' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'website' ) ); ?>" value="<?php if ( ! empty( $instance['website'] ) ) : echo esc_attr( $instance['website'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'website' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'website' ) ); ?>" value="<?php echo esc_attr( $instance['website'] ); ?>" class="widefat" />
 		</p>
 
 

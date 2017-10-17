@@ -1,6 +1,6 @@
 <?php
 /**
-* Function for Adding Quema Labs Products Slider Component on vc_init hook
+* Function for Adding Colorlib Products Slider Component on vc_init hook
 *
 * @param void
 *
@@ -9,10 +9,12 @@
 function bonkers_addons_component_products_slider() {
 
 	$display_options = array( 'best-selling' );
-	$terms = get_terms( array(
-		'taxonomy' => 'product_cat',
-		'hide_empty' => false,
-	) );
+	$terms = get_terms(
+		array(
+			'taxonomy' => 'product_cat',
+			'hide_empty' => false,
+		)
+	);
 	foreach ( $terms as $term_object ) {
 		$display_options[ $term_object->slug ] = $term_object->name;
 	}
@@ -57,7 +59,7 @@ add_action( 'vc_before_init', 'bonkers_addons_component_products_slider' );
 
 
 /**
-* Function for displaying Quema Labs Products Slider functionality
+* Function for displaying Colorlib Products Slider functionality
 *
 * @return string $html - the HTML content for this shortcode.
 */
@@ -121,7 +123,8 @@ function bonkers_addons_products_slider_function( $atts, $content ) {
 		$shopapp_products = new WP_Query( $query_args );
 
 		if ( $shopapp_products->have_posts() ) {
-			while ( $shopapp_products->have_posts() ) { $shopapp_products->the_post();
+			while ( $shopapp_products->have_posts() ) {
+				$shopapp_products->the_post();
 
 				$html .= do_shortcode( '[product id="' . get_the_id() . '"]' );
 

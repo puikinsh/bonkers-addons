@@ -1,6 +1,6 @@
 <?php
 /**
-* Function for Adding Quema Labs Image Banner Component on vc_init hook
+* Function for Adding Colorlib Image Banner Component on vc_init hook
 *
 * @param void
 *
@@ -46,7 +46,7 @@ add_action( 'vc_before_init', 'bonkers_addons_component_image_banner' );
 
 
 /**
-* Function for displaying Quema Labs Image Banner functionality
+* Function for displaying Colorlib Image Banner functionality
 *
 * @return string $html - the HTML content for this shortcode.
 */

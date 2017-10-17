@@ -1,6 +1,6 @@
 <?php
 /**
-* Function for Adding Quema Labs Products Slider Component on vc_init hook
+* Function for Adding Colorlib Products Slider Component on vc_init hook
 *
 * @param void
 *
@@ -9,10 +9,12 @@
 function bonkers_addons_component_instagram_box() {
 
 	$display_options = array( 'best-selling' );
-	$terms = get_terms( array(
-		'taxonomy' => 'product_cat',
-		'hide_empty' => false,
-	) );
+	$terms = get_terms(
+		array(
+			'taxonomy' => 'product_cat',
+			'hide_empty' => false,
+		)
+	);
 	foreach ( $terms as $term_object ) {
 		$display_options[ $term_object->slug ] = $term_object->name;
 	}
@@ -55,7 +57,7 @@ add_action( 'vc_before_init', 'bonkers_addons_component_instagram_box' );
 
 
 /**
-* Function for displaying Quema Labs Products Slider functionality
+* Function for displaying Colorlib Products Slider functionality
 *
 * @return string $html - the HTML content for this shortcode.
 */
@@ -88,7 +90,8 @@ function bonkers_addons_instagram_box_function( $atts, $content ) {
 				$insta_image = $shot['small'];
 				$html .= '<div class="shopapp-instagram-box-image"><img class="shopapp-lazy" data-original="' . esc_url( $insta_image ) . '" src="' . esc_url( get_template_directory_uri() ) . '/images/lazyimage.png" /></div>';
 
-				if ( 12 == ++$i ) { break;
+				if ( 12 == ++$i ) {
+					break;
 				}
 			}
 			$i = 0;
@@ -97,7 +100,8 @@ function bonkers_addons_instagram_box_function( $atts, $content ) {
 				$insta_image = $shot['small'];
 				$html .= '<div class="shopapp-instagram-box-image"><img class="shopapp-lazy" data-original="' . esc_url( $insta_image ) . '" src="' . esc_url( get_template_directory_uri() ) . '/images/lazyimage.png" /></div>';
 
-				if ( 6 == ++$i ) { break;
+				if ( 6 == ++$i ) {
+					break;
 				}
 			}
 			$html .= "</div><!-- .shopapp-instagram-box-images -->\n\n";

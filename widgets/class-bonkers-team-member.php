@@ -47,31 +47,71 @@ class Bonkers_Team_Member extends WP_Widget {
 									<?php endif; ?>
 
 				<div class="bonker-team-content">
-					<h4 class="bonkers-team-name"><?php if ( ! empty( $instance['title'] ) ) : echo wp_kses_post( apply_filters( 'widget_title', $instance['title'] ) );
-endif; ?></h4>
-					<span class="bonkers-team-position"><?php if ( ! empty( $instance['position'] ) ) : echo esc_html( $instance['position'] );
-endif; ?></span>
+					<h4 class="bonkers-team-name">
+					<?php
+					if ( ! empty( $instance['title'] ) ) :
+						echo wp_kses_post( apply_filters( 'widget_title', $instance['title'] ) );
+endif;
+?>
+</h4>
+					<span class="bonkers-team-position">
+					<?php
+					if ( ! empty( $instance['position'] ) ) :
+						echo esc_html( $instance['position'] );
+endif;
+?>
+</span>
 					<ul class="bonkers-team-social">
-						<?php if ( ! empty( $instance['link_facebook'] ) ) : echo '<li><a href="' . esc_url( $instance['link_facebook'] ) . '"><i class="fa fa-facebook"></i></a></li>';
-endif; ?>
-						<?php if ( ! empty( $instance['link_twitter'] ) ) : echo '<li><a href="' . esc_url( $instance['link_twitter'] ) . '"><i class="fa fa-twitter"></i></a></li>';
-endif; ?>
-						<?php if ( ! empty( $instance['link_instagram'] ) ) : echo '<li><a href="' . esc_url( $instance['link_instagram'] ) . '"><i class="fa fa-instagram"></i></a></li>';
-endif; ?>
-						<?php if ( ! empty( $instance['link_snapchat'] ) ) : echo '<li><a href="' . esc_url( $instance['link_snapchat'] ) . '"><i class="fa fa-snapchat-ghost"></i></a></li>';
-endif; ?>
-						<?php if ( ! empty( $instance['link_google_plus'] ) ) : echo '<li><a href="' . esc_url( $instance['link_google_plus'] ) . '"><i class="fa fa-google-plus"></i></a></li>';
-endif; ?>
-						<?php if ( ! empty( $instance['link_linkedin'] ) ) : echo '<li><a href="' . esc_url( $instance['link_linkedin'] ) . '"><i class="fa fa-linkedin"></i></a></li>';
-endif; ?>
-						<?php if ( ! empty( $instance['link_github'] ) ) : echo '<li><a href="' . esc_url( $instance['link_github'] ) . '"><i class="fa fa-github"></i></a></li>';
-endif; ?>
-						<?php if ( ! empty( $instance['link_wordpress'] ) ) : echo '<li><a href="' . esc_url( $instance['link_wordpress'] ) . '"><i class="fa fa-wordpress"></i></a></li>';
-endif; ?>
-						<?php if ( ! empty( $instance['link_youtube'] ) ) : echo '<li><a href="' . esc_url( $instance['link_youtube'] ) . '"><i class="fa fa-youtube"></i></a></li>';
-endif; ?>
-						<?php if ( ! empty( $instance['link_vimeo'] ) ) : echo '<li><a href="' . esc_url( $instance['link_vimeo'] ) . '"><i class="fa fa-vimeo"></i></a></li>';
-endif; ?>
+						<?php
+						if ( ! empty( $instance['link_facebook'] ) ) :
+							echo '<li><a href="' . esc_url( $instance['link_facebook'] ) . '"><i class="fa fa-facebook"></i></a></li>';
+endif;
+?>
+						<?php
+						if ( ! empty( $instance['link_twitter'] ) ) :
+							echo '<li><a href="' . esc_url( $instance['link_twitter'] ) . '"><i class="fa fa-twitter"></i></a></li>';
+endif;
+?>
+						<?php
+						if ( ! empty( $instance['link_instagram'] ) ) :
+							echo '<li><a href="' . esc_url( $instance['link_instagram'] ) . '"><i class="fa fa-instagram"></i></a></li>';
+endif;
+?>
+						<?php
+						if ( ! empty( $instance['link_snapchat'] ) ) :
+							echo '<li><a href="' . esc_url( $instance['link_snapchat'] ) . '"><i class="fa fa-snapchat-ghost"></i></a></li>';
+endif;
+?>
+						<?php
+						if ( ! empty( $instance['link_google_plus'] ) ) :
+							echo '<li><a href="' . esc_url( $instance['link_google_plus'] ) . '"><i class="fa fa-google-plus"></i></a></li>';
+endif;
+?>
+						<?php
+						if ( ! empty( $instance['link_linkedin'] ) ) :
+							echo '<li><a href="' . esc_url( $instance['link_linkedin'] ) . '"><i class="fa fa-linkedin"></i></a></li>';
+endif;
+?>
+						<?php
+						if ( ! empty( $instance['link_github'] ) ) :
+							echo '<li><a href="' . esc_url( $instance['link_github'] ) . '"><i class="fa fa-github"></i></a></li>';
+endif;
+?>
+						<?php
+						if ( ! empty( $instance['link_wordpress'] ) ) :
+							echo '<li><a href="' . esc_url( $instance['link_wordpress'] ) . '"><i class="fa fa-wordpress"></i></a></li>';
+endif;
+?>
+						<?php
+						if ( ! empty( $instance['link_youtube'] ) ) :
+							echo '<li><a href="' . esc_url( $instance['link_youtube'] ) . '"><i class="fa fa-youtube"></i></a></li>';
+endif;
+?>
+						<?php
+						if ( ! empty( $instance['link_vimeo'] ) ) :
+							echo '<li><a href="' . esc_url( $instance['link_vimeo'] ) . '"><i class="fa fa-vimeo"></i></a></li>';
+endif;
+?>
 					</ul>
 				</div>
 
@@ -134,6 +174,24 @@ endif; ?>
 	 */
 	public function form( $instance ) {
 
+		$defaults = array(
+			'position' => '',
+			'title' => '',
+			'link_facebook' => '',
+			'link_twitter' => '',
+			'link_instagram' => '',
+			'link_snapchat' => '',
+			'link_google_plus' => '',
+			'link_linkedin' => '',
+			'link_github' => '',
+			'link_wordpress' => '',
+			'link_youtube' => '',
+			'link_vimeo' => '',
+			'image_uri' => '',
+		);
+
+		$instance = wp_parse_args( $instance, $defaults );
+
 		?>
 		<p>
 
@@ -150,9 +208,7 @@ endif; ?>
 			?>
 
 			<input type="text" class="widefat custom_media_url" name="<?php echo esc_attr( $this->get_field_name( 'image_uri' ) ); ?>"
-				   id="<?php echo esc_attr( $this->get_field_id( 'image_uri' ) ); ?>" value="<?php if ( ! empty( $instance['image_uri'] ) ) : echo esc_attr( $instance['image_uri'] );
-endif; ?>"
-				   style="margin-top:5px;">
+				   id="<?php echo esc_attr( $this->get_field_id( 'image_uri' ) ); ?>" value="<?php echo esc_attr( $instance['image_uri'] ); ?>" style="margin-top:5px;">
 
 			<input type="button" class="button button-primary custom_media_button" id="custom_media_button"
 				   name="<?php echo esc_attr( $this->get_field_name( 'image_uri' ) ); ?>" value="<?php esc_attr_e( 'Upload Image', 'bonkers-addons' ); ?>"
@@ -166,9 +222,7 @@ endif; ?>"
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Name', 'bonkers-addons' ); ?></label><br/>
 
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
-				   id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php if ( ! empty( $instance['title'] ) ) : echo esc_attr( $instance['title'] );
-endif; ?>"
-				   class="widefat"/>
+				   id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat"/>
 
 		</p>
 
@@ -177,67 +231,51 @@ endif; ?>"
 			<label for="<?php echo esc_attr( $this->get_field_id( 'position' ) ); ?>"><?php esc_html_e( 'Position', 'bonkers-addons' ); ?></label><br/>
 
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'position' ) ); ?>"
-				   id="<?php echo esc_attr( $this->get_field_id( 'position' ) ); ?>" value="<?php if ( ! empty( $instance['position'] ) ) : echo esc_attr( $instance['position'] );
-endif; ?>"
-				   class="widefat"/>
+				   id="<?php echo esc_attr( $this->get_field_id( 'position' ) ); ?>" value="<?php echo esc_attr( $instance['position'] ); ?>" class="widefat"/>
 
 		</p>
 		<br><br>
 		
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_facebook' ) ); ?>"><?php esc_html_e( 'Facebook URL','bonkers-addons' ); ?></label><br />
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_facebook' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_facebook' ) ); ?>" value="<?php if ( ! empty( $instance['link_facebook'] ) ) : echo esc_attr( $instance['link_facebook'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_facebook' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_facebook' ) ); ?>" value="<?php echo esc_attr( $instance['link_facebook'] ); ?>" class="widefat" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_twitter' ) ); ?>"><?php esc_html_e( 'Twitter URL','bonkers-addons' ); ?></label><br />
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_twitter' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_twitter' ) ); ?>" value="<?php if ( ! empty( $instance['link_twitter'] ) ) : echo esc_attr( $instance['link_twitter'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_twitter' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_twitter' ) ); ?>" value="<?php echo esc_attr( $instance['link_twitter'] ); ?>" class="widefat" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_instagram' ) ); ?>"><?php esc_html_e( 'Instagram URL','bonkers-addons' ); ?></label><br />
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_instagram' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_instagram' ) ); ?>" value="<?php if ( ! empty( $instance['link_instagram'] ) ) : echo esc_attr( $instance['link_instagram'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_instagram' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_instagram' ) ); ?>" value="<?php echo esc_attr( $instance['link_instagram'] ); ?>" class="widefat" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_snapchat' ) ); ?>"><?php esc_html_e( 'Snapchat URL','bonkers-addons' ); ?></label><br />
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_snapchat' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_snapchat' ) ); ?>" value="<?php if ( ! empty( $instance['link_snapchat'] ) ) : echo esc_attr( $instance['link_snapchat'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_snapchat' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_snapchat' ) ); ?>" value="<?php echo esc_attr( $instance['link_snapchat'] ); ?>" class="widefat" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_google_plus' ) ); ?>"><?php esc_html_e( 'Google Plus URL','bonkers-addons' ); ?></label><br />
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_google_plus' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_google_plus' ) ); ?>" value="<?php if ( ! empty( $instance['link_google_plus'] ) ) : echo esc_attr( $instance['link_google_plus'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_google_plus' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_google_plus' ) ); ?>" value="<?php echo esc_attr( $instance['link_google_plus'] ); ?>" class="widefat" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_linkedin' ) ); ?>"><?php esc_html_e( 'Linkedin URL','bonkers-addons' ); ?></label><br />
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_linkedin' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_linkedin' ) ); ?>" value="<?php if ( ! empty( $instance['link_linkedin'] ) ) : echo esc_attr( $instance['link_linkedin'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_linkedin' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_linkedin' ) ); ?>" value="<?php echo esc_attr( $instance['link_linkedin'] ); ?>" class="widefat" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_github' ) ); ?>"><?php esc_html_e( 'Github URL','bonkers-addons' ); ?></label><br />
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_github' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_github' ) ); ?>" value="<?php if ( ! empty( $instance['link_github'] ) ) : echo esc_attr( $instance['link_github'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_github' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_github' ) ); ?>" value="<?php echo esc_attr( $instance['link_github'] ); ?>" class="widefat" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_wordpress' ) ); ?>"><?php esc_html_e( 'WordPress URL','bonkers-addons' ); ?></label><br />
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_wordpress' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_wordpress' ) ); ?>" value="<?php if ( ! empty( $instance['link_wordpress'] ) ) : echo esc_attr( $instance['link_wordpress'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_wordpress' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_wordpress' ) ); ?>" value="<?php echo esc_attr( $instance['link_wordpress'] ); ?>" class="widefat" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_youtube' ) ); ?>"><?php esc_html_e( 'YouTube URL','bonkers-addons' ); ?></label><br />
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_youtube' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_youtube' ) ); ?>" value="<?php if ( ! empty( $instance['link_youtube'] ) ) : echo esc_attr( $instance['link_youtube'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_youtube' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_youtube' ) ); ?>" value="<?php echo esc_attr( $instance['link_youtube'] ); ?>" class="widefat" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'link_vimeo' ) ); ?>"><?php esc_html_e( 'Vimeo URL','bonkers-addons' ); ?></label><br />
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_vimeo' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_vimeo' ) ); ?>" value="<?php if ( ! empty( $instance['link_vimeo'] ) ) : echo esc_attr( $instance['link_vimeo'] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'link_vimeo' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'link_vimeo' ) ); ?>" value="<?php echo esc_attr( $instance['link_vimeo'] ); ?>" class="widefat" />
 		</p>
-
-
-		
-
 
 	<?php
 
