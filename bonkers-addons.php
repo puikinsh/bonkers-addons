@@ -1205,9 +1205,9 @@ function bonkers_addons_init() {
 					)
 				);
 
-			if ( ! Bonkers_Helper::has_plugin( 'contact-form-7' ) ) {
+			if ( ! Bonkers_Helper::has_plugin( 'kali-forms' ) ) {
 				$wp_customize->add_setting(
-					'bonkers_addons_installcf7', array(
+					'bonkers_addons_install_kali-forms', array(
 						'type' => 'option',
 						'default' => '',
 						'sanitize_callback' => 'bonkers_addons_sanitize_text',
@@ -1215,17 +1215,17 @@ function bonkers_addons_init() {
 				);
 				$wp_customize->add_control(
 					new Bonkers_Addons_Display_Text_Control(
-						$wp_customize, 'bonkers_addons_installcf7', array(
+						$wp_customize, 'bonkers_addons_install_kali-forms', array(
 							'section' => 'bonkers_addons_contact_section', // Required, core or custom.
 						 'label' => esc_attr__( 'Contact Form', 'bonkers-addons' ),
-						 'description' => esc_attr__( 'Please install Contact Form 7 in order to add a contact form to this section', 'bonkers-addons' ),
+						 'description' => esc_attr__( 'Please install Kaliforms in order to add a contact form to this section', 'bonkers-addons' ),
 						)
 					)
 				);
 			} else {
 
 				$bonkers_addons_form_args = array(
-					'post_type' => 'wpcf7_contact_form',
+					'post_type' => 'kaliforms_forms',
 					'posts_per_page' => -1,
 				);
 				$bonkers_addons_form_list = get_posts( $bonkers_addons_form_args );
@@ -1244,7 +1244,7 @@ function bonkers_addons_init() {
 							$wp_customize, 'bonkers_addons_create_form', array(
 								'section' => 'bonkers_addons_contact_section', // Required, core or custom.
 							 'label' => esc_attr__( 'Contact Form', 'bonkers-addons' ),
-							 'description' => esc_attr__( 'Please go and create a form in order to have somethign to show in this section', 'bonkers-addons' ),
+							 'description' => esc_attr__( 'Please go and create a form in order to have something to show in this section', 'bonkers-addons' ),
 							)
 						)
 					);
@@ -1263,7 +1263,7 @@ function bonkers_addons_init() {
 							'section' => 'bonkers_addons_contact_section', // Required, core or custom.
 						'choices'     => $bonkers_addons_forms,
 						'label' => esc_attr__( 'Contact Form', 'bonkers-addons' ),
-						'description' => esc_attr__( 'Forms are obtained from the Contact Form 7 plugin.', 'bonkers-addons' ),
+						'description' => esc_attr__( 'Forms are obtained from the Kaliforms plugin.', 'bonkers-addons' ),
 						)
 					);
 					$wp_customize->selective_refresh->add_partial(
