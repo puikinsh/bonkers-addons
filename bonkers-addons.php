@@ -12,7 +12,7 @@
  * Plugin Name: Bonkers Addons
  * Plugin URI:  https://colorlib.com/wp/themes/bonkers/
  * Description: Addons for Bonkers theme.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Colorlib
  * Author URI:  https://colorlib.com
  * Text Domain: bonkers-addons

@@ -1,4 +1,4 @@
-jQuery( document ).ready( function( $ ) {// jscs:ignore validateLineBreaks
+jQuery( function( $ ) {// jscs:ignore validateLineBreaks
 
   function mediaUpload( buttonClass ) {
 

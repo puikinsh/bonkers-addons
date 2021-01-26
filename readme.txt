@@ -2,8 +2,8 @@
 Contributors: silkalns, machothemes, colorlibplugins, giucu91
 Tags: shortcodes, companion, widgets
 Requires at least: 3.7
-Tested up to: 4.7.2
-Stable tag: 1.0.0
+Tested up to: 5.6
+Stable tag: 1.0.1
 License: GPLv2 or later
 
 
@@ -19,6 +19,8 @@ Just install and activate.
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.1 =
+* compatibility with jQuery 3.0
 
+= 1.0.0 =
 * Initial release
